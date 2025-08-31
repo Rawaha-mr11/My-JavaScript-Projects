@@ -1,0 +1,1440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Pakistan - Travel Guides</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@700;900&family=Inter:wght@500&family=Playfair+Display&family=Poppins:wght@600;700&family=Cormorant+Garamond&family=IBM+Plex+Mono:wght@600&family=Orbitron:wght@900&family=Quattrocento&family=Roboto+Condensed:wght@500;600&display=swap" rel="stylesheet">
+    <style>
+        /* ===== ROOT: Colors & Fonts ===== */
+        :root {
+            /* Background colors */
+            --bg-sapphire: #0D1B2A;
+            --bg-night: #1B263B;
+            --glass-bg: rgba(13, 27, 42, 0.9);
+            --shadow-dark: rgba(0, 0, 0, 0.8);
+            --spring-green: #A8D5BA;
+            --winter-blue: #B3E5FC;
+            --summer-orange: #FFAB91;
+            --autumn-red: #D84315;
+
+            /* Text Colors */
+            --text-neon: #FFD60A;
+            --text-silver: #E0E1DD;
+            --text-black: #000000;
+
+            /* Accents colors */
+            --accent-crimson: #780000;
+            --glass-border: rgba(255, 214, 10, 0.3);
+            --glow-neon: rgba(255, 214, 10, 0.5);
+
+            /* Shadows */
+            --text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            --shadow-soft: 0 10px 30px rgba(0,0,0,0.2);
+            --btn-hover-shadow: 0 5px 10px #B8963D;
+
+            /* Transitions */
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+            /* Typography Variables */
+            --font-hero: 'Bebas Neue', sans-serif;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-accent: 'Playfair Display', serif;
+            --font-buttons: 'Poppins', sans-serif;
+            --font-testimonials: 'Cormorant Garamond', serif;
+            --font-feature: 'IBM Plex Mono', monospace;
+        }
+        /* ===== END ROOT ===== */
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, var(--bg-night), var(--bg-sapphire));
+            color: var(--text-silver);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            font-family: var(--font-body);
+            font-variation-settings: 'wght' 500;
+            font-size: 1.1rem;
+            line-height: 1.75;
+        }
+
+
+        /* ===== ALL ANCHOR TAG STYLING */
+        a {
+            font-weight: 600;
+            color: var(--text-silver)
+        }
+        /* ===== ALERT STYLES ===== */
+        #alert {
+            display: none;
+            width: 8rem;
+            height: 3rem;
+            padding: 0.5rem;
+            background-color: var(--summer-orange);
+            color: var(--text-silver);
+            border-radius: 0.4rem;
+            position: fixed;
+            z-index: 999;
+            top: 3.2rem;
+            left: 1.5rem;
+        }
+        /* ===== END ALERT ===== */
+        
+        /* ===== SCROLL ANIMATIONS ===== */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-on-scroll {
+            opacity: 0;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .is-visible {
+            opacity: 1;
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* ===== 3D EFFECTS ===== */
+        .perspective-container {
+            perspective: 1000px;
+        }
+        
+        .card-3d {
+            transform-style: preserve-3d;
+            transition: transform 0.5s ease;
+        }
+        
+        .card-3d:hover {
+            transform: rotateY(10deg) rotateX(5deg) translateY(-5px);
+        }
+        
+        /* ===== END BASE STYLES ===== */
+
+
+
+                /* ===== HEADER STYLES ===== */
+        header {
+            position: fixed;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px var(--shadow-dark);
+            transition: top 0.3s ease;
+        }
+
+        .visible {
+            top: 0;
+        }
+
+        .visible:hover {
+            top: 0 !important;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--text-neon);
+            filter: drop-shadow(0 0 12px var(--glow-neon));
+            transition: transform 0.4s ease;
+        }
+
+        .logo-icon:hover {
+            transform: rotate(360deg);
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            background: linear-gradient(90deg, var(--text-neon), var(--text-silver));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav {
+            padding: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            font-family: 'Quattrocento', serif;
+            font-size: 1.1rem;
+            color: var(--text-silver);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-neon);
+            filter: drop-shadow(0 0 8px var(--glow-neon));
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--text-neon);
+            transition: width 0.4s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: var(--text-silver);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .hamburger:hover {
+            color: var(--text-neon);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .language-selector {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 10px 20px;
+            color: var(--text-silver);
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 500;
+            backdrop-filter: blur(15px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E0E1DD' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.8rem center;
+            background-size: 0.9em;
+            padding-right: 2.5rem;
+        }
+
+        .language-selector:hover {
+            border-color: var(--text-neon);
+            color: var(--text-neon);
+        }
+
+        .language-selector option {
+            appearance: none;
+            background: var(--bg-night);
+            color: var(--text-silver);
+            padding: 10px;
+            font-size: 1rem;
+        } 
+
+        .language-selector option:hover {
+            background: var(--text-neon) !important;
+            color: var(--text-silver) !important;
+        }
+
+        .language-selector option:checked {
+            background: var(--text-neon);
+            color: var(--text-black);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .account-btn {
+            background: linear-gradient(135deg, var(--accent-crimson), var(--text-neon));
+            color: var(--bg-sapphire);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px var(--shadow-dark);
+        }
+
+        .account-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 8px 20px var(--glow-neon);
+        }
+
+
+
+        /* ========== URDU HEADER ========== */
+        .urduHeader {
+            position: fixed;
+            top: -80px;
+            left: 0;
+            width: 100%;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px var(--shadow-dark);
+            transition: top 0.3s ease;
+        }
+
+        .urdu-logo-icon {
+            font-size: 3.2rem;
+        }
+
+        .urdu-logo-text {
+            font-size: 3rem;
+        }
+        /* ===== END HEADER ===== */
+
+
+
+
+
+
+        /* ===== MAIN CONTENT CONTAINER ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 5;
+        }
+        /* ===== END MAIN CONTAINER ===== */
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            text-align: center;
+            padding: 6rem 0 4rem;
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-hero);
+            font-weight: 800;
+            font-size: 6rem;
+            background: linear-gradient(45deg, var(--text-neon), var(--summer-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            letter-spacing: 1px;
+            text-shadow: var(--text-shadow);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: 
+                typing 3s steps(23) forwards,
+                fade-in 0.125s 3s forwards;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 0.15em;
+            background: var(--text-neon);
+            animation: 
+                blink-caret 0.75s step-end 4.6,
+                remove-cursor 0.1s 3.5s forwards;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { opacity: 0 }
+            50% { opacity: 1 }
+        }
+
+        @keyframes remove-cursor {
+            to { width: 0 }
+        }
+
+        @keyframes fade-in {
+            to { opacity: 1 }
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin: 1rem 0 3rem;
+            color: var(--text-silver);
+        }
+
+
+        /* HERO URDU STYLING */
+        .urdu-title {
+            font-family: var(--font-hero);
+            font-weight: 800;
+            font-size: 6rem;
+            background: linear-gradient(45deg, var(--summer-orange), var(--text-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            letter-spacing: 1px;
+            text-shadow: var(--text-shadow);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: 
+                typing 3.5s steps(20) forwards,
+                fade-in 0.1s 3.5s forwards;
+        }
+
+        .urdu-title::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 0.15em;
+            background: var(--text-neon);
+            animation: 
+                blink-caret 0.75s step-end 4.6,
+                remove-cursor 0.1s 3.5s forwards;
+        }
+        /* ===== END HERO ===== */
+
+        /* ===== SECTION STYLES ===== */
+        .section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-heading {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 3.5rem;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--text-silver);
+        }
+
+        .section-heading:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--text-neon), var(--text-silver));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .section-heading:hover:after {
+            transform: scaleX(1);
+        }
+
+        .subheading {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.8rem;
+            text-transform: capitalize;
+            color: var(--text-neon);
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        /* ===== END SECTION HEADINGS ===== */
+
+        /* ===== 3D MODEL CONTAINERS ===== */
+        .model-container {
+            height: 450px;
+            position: relative;
+            width: 100vw;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            margin: 3rem 0;
+            overflow: hidden;
+            background: linear-gradient(145deg, var(--bg-night), var(--bg-sapphire));
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .model-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(13, 27, 42, 0.6);
+            z-index: 2;
+        }
+
+        .model-overlay > h3 {
+            font-size: 2.5rem;
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(0,0,0,0.8);
+            margin-bottom: 1rem;
+        }
+        
+        .model-content {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Simulated 3D object */
+        .pyramid-3d {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            transform-style: preserve-3d;
+            transform: rotateX(60deg) rotateZ(45deg);
+            animation: rotate3d 20s infinite linear;
+        }
+        
+        @keyframes rotate3d {
+            0% { transform: rotateX(60deg) rotateZ(0deg); }
+            100% { transform: rotateX(60deg) rotateZ(360deg); }
+        }
+        
+        .pyramid-side {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: rgba(255, 214, 10, 0.2);
+            border: 2px solid var(--text-neon);
+            clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        }
+        
+        .side-1 { transform: translateZ(100px); }
+        .side-2 { transform: rotateY(90deg) translateZ(100px); }
+        .side-3 { transform: rotateY(180deg) translateZ(100px); }
+        .side-4 { transform: rotateY(270deg) translateZ(100px); }
+        /* ===== END 3D MODEL CONTAINERS ===== */
+
+        /* ===== SECTION CONTENT ===== */
+        .section-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3.5rem;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 2px solid var(--glass-border);
+            box-shadow: var(--shadow-soft);
+            padding: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--text-neon);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 214, 10, 0.4);
+        }
+
+        .icon-large {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 3.2rem;
+            color: var(--text-black);
+            background: linear-gradient(90deg, var(--text-neon), var(--text-silver));
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        /* ===== END SECTION CONTENT ===== */
+
+        /* ===== INTERACTIVE ELEMENTS ===== */
+        .interactive-slider {
+            width: 100%;
+            margin: 2rem 0;
+            position: relative;
+            height: 20px;
+            background: var(--glass-bg);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .slider-track {
+            height: 100%;
+            width: 0%;
+            background: linear-gradient(90deg, var(--spring-green), var(--winter-blue));
+            border-radius: 10px;
+            transition: width 0.5s ease;
+        }
+        
+        .slider-labels {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 10px;
+            font-size: 0.9rem;
+            color: var(--text-silver);
+        }
+        
+        .interactive-map {
+            width: 100%;
+            height: 300px;
+            background: var(--glass-bg);
+            border-radius: 15px;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            border: 1px solid var(--glass-border);
+        }
+        
+        .map-point {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background: var(--text-neon);
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            cursor: pointer;
+            box-shadow: 0 0 10px var(--glow-neon);
+            transition: all 0.3s ease;
+        }
+        
+        .map-point:hover {
+            transform: translate(-50%, -50%) scale(1.5);
+        }
+        
+        .point-1 { top: 30%; left: 25%; }
+        .point-2 { top: 60%; left: 45%; }
+        .point-3 { top: 40%; left: 70%; }
+        .point-4 { top: 75%; left: 60%; }
+        /* ===== END INTERACTIVE ELEMENTS ===== */
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            background: linear-gradient(135deg, var(--text-neon), var(--winter-blue));
+            color: var(--text-black);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-family: var(--font-buttons);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 1.6rem;
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.3),
+                0 0 15px var(--glow-neon);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--winter-blue), var(--text-neon));
+            transform: translateY(-10px) scale(1.05);
+            box-shadow:
+                0 12px 25px rgba(0, 0, 0, 0.4),
+                0 0 20px var(--glow-neon);
+        }
+        /* ===== END BUTTONS ===== */
+
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(135deg, var(--bg-sapphire), var(--bg-night));
+            padding: 60px 6% 20px;
+            color: var(--text-silver);
+            font-family: 'Roboto Condensed', sans-serif;
+            position: relative;
+            border-top: 1px solid var(--glass-border);
+            box-shadow: 0 -10px 30px var(--shadow-dark);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .logo-icon {
+            font-size: 2.5rem;
+            color: var(--text-neon);
+            filter: drop-shadow(0 0 12px var(--glow-neon));
+            transition: transform 0.4s ease;
+        }
+
+        .footer-brand .logo-icon:hover {
+            transform: rotate(360deg);
+        }
+
+        .footer-brand .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, var(--text-neon), var(--text-silver));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-slogan {
+            font-family: 'Quattrocento', serif;
+            font-size: 1rem;
+            color: var(--text-silver);
+            opacity: 0.8;
+            max-width: 300px;
+        }
+
+        .footer-links h3, .footer-newsletter h3, .footer-social h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-neon);
+            margin-bottom: 20px;
+            text-shadow: 0 0 8px var(--glow-neon);
+        }
+
+        .footer-links {
+            padding: 0 3rem 0 4rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-family: 'Quattrocento', serif;
+            font-size: 1rem;
+            color: var(--text-silver);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-neon);
+            transform: translateX(10px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form input {
+            width: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 10px;
+            color: var(--text-silver);
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 0.9rem;
+            flex: 1;
+            transition: border-color 0.3s ease;
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--text-neon);
+            outline: none;
+            box-shadow: 0 0 10px var(--glow-neon);
+        }
+
+        .newsletter-form button {
+            width: 40%;
+            background: linear-gradient(135deg, var(--accent-crimson), var(--text-neon));
+            color: var(--bg-sapphire);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-family: sans-serif, 'Orbitron';
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--glow-neon);
+        }
+
+        .newsletter-text {
+            font-family: 'Quattrocento', serif;
+            font-size: 0.9rem;
+            color: var(--text-silver);
+            opacity: 0.8;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            color: var(--text-silver);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.4s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--text-neon);
+            transform: scale(1.2) rotate(360deg);
+            box-shadow: 0 0 15px var(--glow-neon);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--glass-border);
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-silver);
+            opacity: 0.7;
+        }
+        /* ===== END FOOTER ===== */
+
+
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+            .section-heading {
+                font-size: 2.5rem;
+            }
+            .model-container {
+                height: 400px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                padding: 1.5rem;
+            }
+            .hero {
+                padding: 6rem 0 2rem;
+            }
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            .section {
+                padding: 2.5rem 0;
+            }
+            .section-heading {
+                font-size: 2.2rem;
+            }
+            .subheading {
+                font-size: 1.3rem;
+            }
+            .model-container {
+                height: 350px;
+            }
+            .glass-card {
+                padding: 1.2rem;
+            }
+            .icon-large {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 4%; 
+            }
+            .header-actions {
+                gap: 8px;
+            }
+            .logo-text {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+            .logo-icon {
+                font-size: 1.8rem;
+            }
+            .language-selector {
+                max-width: 120px;
+                padding: 8px 30px 8px 12px;
+                font-size: 0.9rem;
+                background-position: right 8px center;
+            }
+            .account-btn {
+                width: 40px;
+                height: 40px;
+            }
+            .hero-title {
+                font-size: 3rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .section-heading {
+                font-size: 2rem;
+            }
+            .section-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 1rem;
+            }
+            .hero {
+                padding: 5rem 0 1.5rem;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .section {
+                padding: 1rem 0;
+            }
+            .section-heading {
+                font-size: 1.8rem;
+            }
+            .model-container {
+                height: 300px;
+            }
+            .icon-large {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.8rem;
+            }
+            .model-overlay > h3 {
+                font-size: 1.8rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .section-heading {
+                font-size: 1.6rem;
+            }
+            .subheading {
+                font-size: 1.2rem;
+            }
+            .model-overlay > h3 {
+                font-size: 1.5rem;
+            }
+        }
+        /* ===== END RESPONSIVE ===== */
+    </style>
+</head>
+<body>
+
+     <!-- ===== Header ===== -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fas fa-globe-asia logo-icon"></i>
+            <span class="logo-text">EPIC PAKISTAN</span>
+        </a>
+        <nav>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Destinations</a></li>
+                <li><a href="#">Tours</a></li>
+                <li><a href="#">Stories</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <select id="languageSelector" class="language-selector">
+                <option value="en">English</option>
+                <option value="ur">اردو</option>
+            </select>
+            <button class="account-btn"><i class="fas fa-user-circle"></i></button>
+        </div>
+    </header>
+
+    <!-- ===== Alert Section ===== -->
+    <section id="alert"></section>
+
+
+
+
+    <!-- ===== Main Content ===== -->
+    <div class="container">
+        <!-- ===== Hero Section ===== -->
+        <section class="hero">
+            <h1 class="hero-title animate-on-scroll">Essential Travel Guides</h1>
+            <p class="hero-subtitle animate-on-scroll">Your comprehensive resource for navigating Pakistan's diverse landscapes, cuisine, and culture with confidence and ease.</p>
+        </section>
+
+        <!-- ===== Dietary Decoder Section ===== -->
+        <section class="section">
+            <h2 class="section-heading animate-on-scroll">Dietary Decoder</h2>
+            <div class="model-container perspective-container">
+                <div class="model-content">
+                    <!-- 3D Pyramid -->
+                    <div class="pyramid-3d">
+                        <div class="pyramid-side side-1"></div>
+                        <div class="pyramid-side side-2"></div>
+                        <div class="pyramid-side side-3"></div>
+                        <div class="pyramid-side side-4"></div>
+                    </div>
+                </div>
+                <div class="model-overlay">
+                    <h3>Region-Specific Food Guides</h3>
+                    <p>Explore Pakistan's diverse culinary landscape with our comprehensive food guides and hydration tips for each region.</p>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="subheading">Northern Cuisine</h3>
+                    <p>Discover hearty dishes of Gilgit-Baltistan and Hunza Valley, perfect for high-altitude energy needs.</p>
+                    <ul style="text-align: left; margin: 1rem 0; font-size: 0.95rem;">
+                        <li>Chapshuro - Meat-filled bread</li>
+                        <li>Hunza Apricot Soup</li>
+                        <li>Harissa - Meat and wheat porridge</li>
+                    </ul>
+                    <button class="btn">Explore Foods <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-tint"></i>
+                    </div>
+                    <h3 class="subheading">Hydration Tips</h3>
+                    <p>Stay properly hydrated in different climates and altitudes with our specialized guidance.</p>
+                    <ul style="text-align: left; margin: 1rem 0; font-size: 0.95rem;">
+                        <li>Altitude hydration strategies</li>
+                        <li>Local beverages to try/avoid</li>
+                        <li>Electrolyte balance in heat</li>
+                    </ul>
+                    <button class="btn">Hydration Guide <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-apple-alt"></i>
+                    </div>
+                    <h3 class="subheading">Food Safety</h3>
+                    <p>Navigate street food and restaurant dining with confidence using our safety guidelines.</p>
+                    <ul style="text-align: left; margin: 1rem 0; font-size: 0.95rem;">
+                        <li>Street food safety tips</li>
+                        <li>Regional water precautions</li>
+                        <li>Allergy translation cards</li>
+                    </ul>
+                    <button class="btn">Safety Tips <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Medical Preparedness Sim ===== -->
+        <section class="section">
+            <h2 class="section-heading animate-on-scroll">Medical Preparedness Sim</h2>
+            <div class="model-container">
+                <div class="model-overlay">
+                    <h3>Altitude Sickness Prevention</h3>
+                    <p>Interactive module to prepare for high-altitude destinations and prevent altitude sickness.</p>
+                    <div class="interactive-slider">
+                        <div class="slider-track" id="altitudeSlider"></div>
+                    </div>
+                    <div class="slider-labels">
+                        <span>Sea Level</span>
+                        <span>2500m</span>
+                        <span>5000m</span>
+                        <span>8000m+</span>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-mountain"></i>
+                    </div>
+                    <h3 class="subheading">Altitude Calculator</h3>
+                    <p>Calculate your risk of altitude sickness based on your itinerary and personal health factors.</p>
+                    <button class="btn">Calculate Risk <i class="fas fa-calculator"></i></button>
+                </div>
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-first-aid"></i>
+                    </div>
+                    <h3 class="subheading">Prevention Plan</h3>
+                    <p>Create a personalized altitude sickness prevention plan with medication recommendations.</p>
+                    <button class="btn">Create Plan <i class="fas fa-plus-square"></i></button>
+                </div>
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-book-medical"></i>
+                    </div>
+                    <h3 class="subheading">Emergency Protocols</h3>
+                    <p>Learn recognition and first response techniques for altitude-related medical emergencies.</p>
+                    <button class="btn">Learn Protocols <i class="fas fa-book-reader"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Transport Navigator ===== -->
+        <section class="section">
+            <h2 class="section-heading animate-on-scroll">Transport Navigator</h2>
+            <div class="model-container">
+                <div class="model-overlay">
+                    <h3>Vehicle Recommendations</h3>
+                    <p>Find the perfect vehicle for your journey based on route difficulty and terrain conditions.</p>
+                    <div class="interactive-map">
+                        <div class="map-point point-1" title="Karakoram Highway"></div>
+                        <div class="map-point point-2" title="Hunza Valley"></div>
+                        <div class="map-point point-3" title="Skardu Region"></div>
+                        <div class="map-point point-4" title="Kalash Valleys"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-road"></i>
+                    </div>
+                    <h3 class="subheading">Route Difficulty Ratings</h3>
+                    <p>Our comprehensive rating system helps you understand what to expect on Pakistan's diverse road networks.</p>
+                    <button class="btn">View Routes <i class="fas fa-route"></i></button>
+                </div>
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-car-alt"></i>
+                    </div>
+                    <h3 class="subheading">Vehicle Matching</h3>
+                    <p>Find the perfect vehicle for your specific route, group size, and comfort requirements.</p>
+                    <button class="btn">Find Vehicle <i class="fas fa-search"></i></button>
+                </div>
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-snowplow"></i>
+                    </div>
+                    <h3 class="subheading">Seasonal Considerations</h3>
+                    <p>Learn how weather and seasons affect road conditions and vehicle requirements.</p>
+                    <button class="btn">Seasonal Guide <i class="fas fa-calendar-alt"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Lodge Locator ===== -->
+        <section class="section">
+            <h2 class="section-heading animate-on-scroll">Lodge Locator</h2>
+            <div class="model-container">
+                <div class="model-overlay">
+                    <h3>Emergency Accommodation Finder</h3>
+                    <p>Quickly find and book accommodations, especially useful for last-minute changes or emergencies.</p>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-hotel"></i>
+                    </div>
+                    <h3 class="subheading">Real-Time Availability</h3>
+                    <p>Check lodge and hotel availability in real-time across Pakistan's popular destinations.</p>
+                    <button class="btn">Check Availability <i class="fas fa-bed"></i></button>
+                </div>
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3 class="subheading">Emergency Booking</h3>
+                    <p>Instant booking system for when plans change unexpectedly or emergencies occur.</p>
+                    <button class="btn">Emergency Book <i class="fas fa-phone-alt"></i></button>
+                </div>
+                <div class="glass-card card-3d animate-on-scroll">
+                    <div class="icon-large">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="subheading">Location Services</h3>
+                    <p>Find the nearest available accommodation based on your current location.</p>
+                    <button class="btn">Find Nearby <i class="fas fa-location-arrow"></i></button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+
+
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <i class="fas fa-globe-asia logo-icon"></i>
+                    <span class="logo-text">EPIC PAKISTAN</span>
+                </a>
+                <p class="footer-slogan">Crafting Legendary Journeys Across Pakistan</p>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Destinations</a></li>
+                    <li><a href="#">Tours</a></li>
+                    <li><a href="#">Stories</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="concierge.html">concierge</a></li>
+                    <li><a href="#">Travel Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3>Stay Connected</h3>
+                <div class="newsletter-form">
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email">
+                    <button id="newsletterSubmit">Subscribe</button>
+                </div>
+                <p class="newsletter-text">Join our newsletter for exclusive offers and travel updates!</p>
+            </div>
+            <div class="footer-social">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-x"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="copyrightYear"></span> Epic Pakistan. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+
+
+    <script>
+        // ===== Scroll Animation =====
+        document.addEventListener('DOMContentLoaded', function() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            
+            // ===== Intersection Observer for scroll animations =====
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            animatedElements.forEach(el => {
+                observer.observe(el);
+            });
+
+
+            // ===== Header Elements =====
+            const navUl = document.querySelector('nav ul');
+            const hamburger = document.querySelector('.hamburger');
+            const header = document.querySelector('header');
+            const languageSelector = document.getElementById('languageSelector');
+
+            // ===== Header Hover State Tracking =====
+            let isHeaderHovered = false;
+
+            // ===== Set Current Year in Footer =====
+            document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+
+            // ===== Hamburger Menu Toggle =====
+            hamburger.addEventListener('click', () => {
+                navUl.classList.toggle('active');
+                // ===== Keep Header Visible When Menu is Active =====
+                if (navUl.classList.contains('active')) {
+                    header.classList.add('visible');
+                }
+            });
+
+            // ===== Header Hover Logic =====
+            header.addEventListener('mouseenter', () => {
+                isHeaderHovered = true;
+                header.classList.add('visible');
+            });
+
+            header.addEventListener('mouseleave', () => {
+                isHeaderHovered = false;
+                // ===== Only Hide if Menu is Not Active =====
+                if (!navUl.classList.contains('active')) {
+                    header.classList.remove('visible');
+                }
+            });
+
+            // ===== Show Header When Mouse Near Top of Page =====
+            document.addEventListener('mousemove', (e) => {
+                if (e.clientY <= 50) {
+                    header.classList.add('visible');
+                } else if (!isHeaderHovered && !navUl.classList.contains('active')) {
+                    header.classList.remove('visible');
+                }
+            });
+
+            // ===== Language Switcher with RTL/LTR Support and Full Page Translation =====
+            languageSelector.addEventListener('change', () => {
+                const lang = languageSelector.value;
+                switchLanguage(lang);
+            });
+
+            
+            // ===== Animate altitude slider =====
+            const altitudeSlider = document.getElementById('altitudeSlider');
+            if (altitudeSlider) {
+                let width = 0;
+                const animateSlider = () => {
+                    if (width >= 100) {
+                        width = 0;
+                    } else {
+                        width += 0.5;
+                    }
+                    altitudeSlider.style.width = width + '%';
+                    requestAnimationFrame(animateSlider);
+                };
+                animateSlider();
+            }
+            
+            // ===== 3D card effect on mouse move =====
+            const cards = document.querySelectorAll('.card-3d');
+            cards.forEach(card => {
+                card.addEventListener('mousemove', (e) => {
+                    const xAxis = (window.innerWidth / 2 - e.pageX) / 25;
+                    const yAxis = (window.innerHeight / 2 - e.pageY) / 25;
+                    card.style.transform = `rotateY(${xAxis}deg) rotateX(${yAxis}deg)`;
+                });
+                
+                card.addEventListener('mouseenter', () => {
+                    card.style.transition = 'none';
+                });
+                
+                card.addEventListener('mouseleave', () => {
+                    card.style.transition = 'transform 0.5s ease';
+                    card.style.transform = 'rotateY(0deg) rotateX(0deg)';
+                });
+            });
+        });
+    </script>
+</body>
+</html>

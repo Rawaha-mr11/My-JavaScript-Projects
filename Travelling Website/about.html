@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Epic Pakistan Travel - About Us</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@700;900&family=Inter:wght@500&family=Playfair+Display&family=Poppins:wght@600;700&family=Cormorant+Garamond&family=IBM+Plex+Mono:wght@600&family=Orbitron:wght@900&family=Quattrocento&family=Roboto+Condensed:wght@500;600&display=swap" rel="stylesheet">
+    <!-- ===== URDU FONT IMPORT ===== -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Nastaliq+Urdu&display=swap" rel="stylesheet">
+    <style>
+        /* ===== ROOT: Colors & Fonts ===== */
+        :root {
+            /* Background colors */
+            --bg-sapphire: #0D1B2A;
+            --bg-night: #1B263B;
+            --glass-bg: rgba(13, 27, 42, 0.9);
+            --shadow-dark: rgba(0, 0, 0, 0.8);
+            --spring-green: #A8D5BA;
+            --winter-blue: #B3E5FC;
+            --summer-orange: #FFAB91;
+            --autumn-red: #D84315;
+
+            /* Text Colors */
+            --text-neon: #FFD60A;
+            --text-silver: #E0E1DD;
+            --text-black: #000000;
+
+            /* Accents colors */
+            --accent-crimson: #780000;
+            --glass-border: rgba(255, 214, 10, 0.3);
+            --glow-neon: rgba(255, 214, 10, 0.5);
+
+            /* Shadows */
+            --text-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            --shadow-soft: 0 10px 30px rgba(0,0,0,0.2);
+            --btn-hover-shadow: 0 5px 10px #B8963D;
+
+            /* Transitions */
+            --transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+
+            /* Typography Variables */
+            --font-hero: 'Bebas Neue', sans-serif;
+            --font-heading: 'Montserrat', sans-serif;
+            --font-body: 'Inter', sans-serif;
+            --font-accent: 'Playfair Display', serif;
+            --font-buttons: 'Poppins', sans-serif;
+            --font-testimonials: 'Cormorant Garamond', serif;
+            --font-feature: 'IBM Plex Mono', monospace;
+            --font-urdu: 'Noto Nastaliq Urdu', serif;
+        }
+
+        /* ===== RTL SUPPORT FOR URDU ===== */
+        html[dir="rtl"] {
+            text-align: right;
+        }
+        
+        html[dir="rtl"] .container,
+        html[dir="rtl"] .hero,
+        html[dir="rtl"] .section,
+        html[dir="rtl"] .glass-card {
+            text-align: right;
+        }
+        
+        html[dir="rtl"] .section-heading:after,
+        html[dir="rtl"] nav a::after {
+            right: 0;
+            left: auto;
+        }
+        
+        html[dir="rtl"] .footer-container {
+            direction: rtl;
+        }
+        
+        html[dir="rtl"] .footer-links a:hover {
+            transform: translateX(-10px);
+        }
+        
+        html[dir="rtl"] .newsletter-form {
+            flex-direction: row-reverse;
+        }
+        
+        .urdu-text {
+            font-family: var(--font-urdu);
+            line-height: 2;
+        }
+
+        /* ===== END RTL SUPPORT ===== */
+
+        /* ===== BASE STYLES ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(145deg, var(--bg-night), var(--bg-sapphire));
+            color: var(--text-silver);
+            min-height: 100vh;
+            overflow-x: hidden;
+            position: relative;
+            font-family: var(--font-body);
+            font-variation-settings: 'wght' 500;
+            font-size: 1.1rem;
+            line-height: 1.75;
+            transition: all 0.3s ease;
+        }
+        /* ===== END BASE STYLES ===== */
+
+
+        /* ===== ALL ANCHOR TAG STYLING ===== */
+        a {
+            font-weight: 600;
+            color: var(--text-silver)
+        }
+        /* ===== END ANCHOR TAGS ===== */
+
+        /* ===== ALERT STYLES ===== */
+        #alert {
+            display: none;
+            width: 8rem;
+            height: 3rem;
+            padding: 0.5rem;
+            background-color: var(--summer-orange);
+            color: var(--text-silver);
+            border-radius: 0.4rem;
+            position: fixed;
+            z-index: 999;
+            top: 3.2rem;
+            left: 1.5rem;
+        }
+        /* ===== END ALERT ===== */
+
+        /* ===== HEADER STYLES ===== */
+        header {
+            position: fixed;
+            top: -100px;
+            left: 0;
+            width: 100%;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px var(--shadow-dark);
+            transition: top 0.3s ease;
+        }
+
+        .visible {
+            top: 0;
+        }
+
+        .visible:hover {
+            top: 0 !important;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            font-size: 2.5rem;
+            color: var(--text-neon);
+            filter: drop-shadow(0 0 12px var(--glow-neon));
+            transition: transform 0.4s ease;
+        }
+
+        .logo-icon:hover {
+            transform: rotate(360deg);
+        }
+
+        .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 2rem;
+            font-weight: 900;
+            letter-spacing: 4px;
+            background: linear-gradient(90deg, var(--text-neon), var(--text-silver));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        nav {
+            padding: 1rem;
+        }
+
+        nav ul {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        nav a {
+            font-family: 'Quattrocento', serif;
+            font-size: 1.1rem;
+            color: var(--text-silver);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: var(--text-neon);
+            filter: drop-shadow(0 0 8px var(--glow-neon));
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--text-neon);
+            transition: width 0.4s ease;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        .hamburger {
+            display: none;
+            font-size: 2rem;
+            color: var(--text-silver);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .hamburger:hover {
+            color: var(--text-neon);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .language-selector {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            padding: 10px 20px;
+            color: var(--text-silver);
+            font-family: 'Roboto Condensed', sans-serif;
+            font-weight: 500;
+            backdrop-filter: blur(15px);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            appearance: none;
+            background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23E0E1DD' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3e%3cpolyline points='6 9 12 15 18 9'%3e%3c/polyline%3e%3c/svg%3e");
+            background-repeat: no-repeat;
+            background-position: right 0.8rem center;
+            background-size: 0.9em;
+            padding-right: 2.5rem;
+        }
+
+        .language-selector:hover {
+            border-color: var(--text-neon);
+            color: var(--text-neon);
+        }
+
+        .language-selector option {
+            appearance: none;
+            background: var(--bg-night);
+            color: var(--text-silver);
+            padding: 10px;
+            font-size: 1rem;
+        } 
+
+        .language-selector option:hover {
+            background: var(--text-neon) !important;
+            color: var(--text-silver) !important;
+        }
+
+        .language-selector option:checked {
+            background: var(--text-neon);
+            color: var(--text-black);
+            font-weight: 600;
+            position: relative;
+        }
+
+        .account-btn {
+            background: linear-gradient(135deg, var(--accent-crimson), var(--text-neon));
+            color: var(--bg-sapphire);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.4s ease;
+            box-shadow: 0 5px 15px var(--shadow-dark);
+        }
+
+        .account-btn:hover {
+            transform: scale(1.15);
+            box-shadow: 0 8px 20px var(--glow-neon);
+        }
+
+        /* ========== URDU HEADER ========== */
+        .urduHeader {
+            position: fixed;
+            top: -80px;
+            left: 0;
+            width: 100%;
+            padding: 20px 6%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 2000;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            box-shadow: 0 4px 20px var(--shadow-dark);
+            transition: top 0.3s ease;
+        }
+
+        .urdu-logo-icon {
+            font-size: 3.2rem;
+        }
+
+        .urdu-logo-text {
+            font-size: 3rem;
+        }
+        /* ===== END HEADER ===== */
+
+        /* ===== MAIN CONTENT CONTAINER ===== */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem;
+            position: relative;
+            z-index: 5;
+        }
+        /* ===== END MAIN CONTAINER ===== */
+
+        /* ===== HERO SECTION ===== */
+        .hero {
+            text-align: center;
+            padding: 6rem 0 4rem;
+            position: relative;
+            margin-bottom: 4rem;
+        }
+
+        .hero-title {
+            font-family: var(--font-hero);
+            font-weight: 800;
+            font-size: 6rem;
+            background: linear-gradient(45deg, var(--text-neon), var(--summer-orange));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            letter-spacing: 1px;
+            text-shadow: var(--text-shadow);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: 
+                typing 3.5s steps(29) forwards,
+                fade-in 0.1s 3.5s forwards;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 0.15em;
+            background: var(--text-neon);
+            animation: 
+                blink-caret 0.75s step-end 4.6,
+                remove-cursor 0.1s 3.5s forwards;
+        }
+
+        @keyframes typing {
+            from { width: 0 }
+            to { width: 100% }
+        }
+
+        @keyframes blink-caret {
+            from, to { opacity: 0 }
+            50% { opacity: 1 }
+        }
+
+        @keyframes remove-cursor {
+            to { width: 0 }
+        }
+
+        @keyframes fade-in {
+            to { opacity: 1 }
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+            opacity: 0.9;
+            margin: 1rem 0 3rem;
+            color: var(--text-silver);
+        }
+
+        /* HERO URDU STYLING */
+        .urdu-title {
+            font-family: var(--font-hero);
+            font-weight: 800;
+            font-size: 6rem;
+            background: linear-gradient(45deg, var(--summer-orange), var(--text-neon));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+            letter-spacing: 1px;
+            text-shadow: var(--text-shadow);
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            white-space: nowrap;
+            animation: 
+                typing 3.5s steps(20) forwards,
+                fade-in 0.1s 3.5s forwards;
+        }
+
+        .urdu-title::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 100%;
+            width: 0.15em;
+            background: var(--text-neon);
+            animation: 
+                blink-caret 0.75s step-end 4.6,
+                remove-cursor 0.1s 3.5s forwards;
+        }
+
+        /* ===== END HERO ===== */
+
+        /* ===== SECTION STYLES ===== */
+        .section {
+            padding: 4rem 0;
+            position: relative;
+        }
+
+        .section-heading {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 3.5rem;
+            letter-spacing: -0.5px;
+            position: relative;
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: var(--text-silver);
+        }
+
+        .section-heading:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--text-neon), var(--text-silver));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: var(--transition);
+        }
+
+        .section-heading:hover:after {
+            transform: scaleX(1);
+        }
+
+        .subheading {
+            font-family: var(--font-heading);
+            font-weight: 900;
+            font-size: 1.8rem;
+            text-transform: capitalize;
+            color: var(--text-neon);
+            margin-bottom: 0.8rem;
+            line-height: 1.5;
+        }
+        /* ===== END SECTION HEADINGS ===== */
+
+        /* ===== 3D MODEL CONTAINERS ===== */
+        .model-container {
+            height: 550px;
+            position: relative;
+            width: 100vw;
+            left: 50%;
+            transform: translateX(-50%);
+            margin: 3rem 0;
+            overflow: hidden;
+            background: linear-gradient(145deg, var(--bg-night), var(--bg-sapphire));
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .urdu-model-container {
+            height: 550px;
+            position: relative;
+            width: 100vw;
+            right: 0;
+            transform: translateX(3.5%);
+            margin: 3rem 0;
+            overflow: hidden;
+            background: linear-gradient(145deg, var(--bg-night), var(--bg-sapphire));
+            border: 1px solid var(--glass-border);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .model-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            background: rgba(13, 27, 42, 0.6);
+            z-index: 2;
+        }
+
+        .model-overlay > h3 {
+            font-size: 3rem;
+            font-weight: 900;
+            text-shadow: 0 0 10px rgba(0,0,0,0.8); 
+        }
+        /* ===== END 3D MODEL CONTAINERS ===== */
+
+        /* ===== SECTION CONTENT ===== */
+        .section-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            margin-top: 3.5rem;
+        }
+
+        .glass-card {
+            background: var(--glass-bg);
+            backdrop-filter: blur(12px);
+            border-radius: 20px;
+            border: 2px solid var(--glass-border);
+            box-shadow: var(--shadow-soft);
+            padding: 1.5rem;
+            transition: var(--transition);
+            position: relative;
+            z-index: 2;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .glass-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--text-neon);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3), 0 0 20px rgba(255, 214, 10, 0.4);
+        }
+
+        .icon-large {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+            font-size: 3.2rem;
+            color: var(--text-black);
+            background: linear-gradient(90deg, var(--text-neon), var(--text-silver));
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        /* ===== END SECTION CONTENT ===== */
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            background: linear-gradient(135deg, var(--text-neon), var(--winter-blue));
+            color: var(--text-black);
+            border: none;
+            padding: 1rem 2.5rem;
+            border-radius: 60px;
+            font-size: 1rem;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition);
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-family: var(--font-buttons);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin-top: 1.6rem;
+            box-shadow:
+                0 8px 20px rgba(0, 0, 0, 0.3),
+                0 0 15px var(--glow-neon);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+            transition: 0.5s;
+        }
+
+        .btn:hover::before {
+            left: 100%;
+        }
+
+        .btn:hover {
+            background: linear-gradient(135deg, var(--winter-blue), var(--text-neon));
+            transform: translateY(-10px) scale(1.05);
+            box-shadow:
+                0 12px 25px rgba(0, 0, 0, 0.4),
+                0 0 20px var(--glow-neon);
+        }
+        /* ===== END BUTTONS ===== */
+
+        /* ===== FOOTER ===== */
+        .footer {
+            background: linear-gradient(135deg, var(--bg-sapphire), var(--bg-night));
+            padding: 60px 6% 20px;
+            color: var(--text-silver);
+            font-family: 'Roboto Condensed', sans-serif;
+            position: relative;
+            border-top: 1px solid var(--glass-border);
+            box-shadow: 0 -10px 30px var(--shadow-dark);
+        }
+
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-bottom: 40px;
+        }
+
+        .footer-brand .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            margin-bottom: 15px;
+        }
+
+        .footer-brand .logo-icon {
+            font-size: 2.5rem;
+            color: var(--text-neon);
+            filter: drop-shadow(0 0 12px var(--glow-neon));
+            transition: transform 0.4s ease;
+        }
+
+        .footer-brand .logo-icon:hover {
+            transform: rotate(360deg);
+        }
+
+        .footer-brand .logo-text {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            letter-spacing: 3px;
+            background: linear-gradient(90deg, var(--text-neon), var(--text-silver));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .footer-slogan {
+            font-family: 'Quattrocento', serif;
+            font-size: 1rem;
+            color: var(--text-silver);
+            opacity: 0.8;
+            max-width: 300px;
+        }
+
+        .footer-links h3, .footer-newsletter h3, .footer-social h3 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1.5rem;
+            color: var(--text-neon);
+            margin-bottom: 20px;
+            text-shadow: 0 0 8px var(--glow-neon);
+        }
+
+        .footer-links {
+            padding: 0 3rem 0 4rem;
+        }
+
+        .footer-links ul {
+            list-style: none;
+        }
+
+        .footer-links a {
+            font-family: 'Quattrocento', serif;
+            font-size: 1rem;
+            color: var(--text-silver);
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: 0.3s ease;
+        }
+
+        .footer-links a:hover {
+            color: var(--text-neon);
+            transform: translateX(10px);
+        }
+
+        .newsletter-form {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+
+        .newsletter-form input {
+            width: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--glass-border);
+            border-radius: 8px;
+            padding: 10px;
+            color: var(--text-silver);
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 0.9rem;
+            flex: 1;
+            transition: border-color 0.3s ease;
+        }
+
+        .newsletter-form input:focus {
+            border-color: var(--text-neon);
+            outline: none;
+            box-shadow: 0 0 10px var(--glow-neon);
+        }
+
+        .newsletter-form button {
+            width: 40%;
+            background: linear-gradient(135deg, var(--accent-crimson), var(--text-neon));
+            color: var(--bg-sapphire);
+            border: none;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-family:  sans-serif, 'Orbitron';
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .newsletter-form button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px var(--glow-neon);
+        }
+
+        .newsletter-text {
+            font-family: 'Quattrocento', serif;
+            font-size: 0.9rem;
+            color: var(--text-silver);
+            opacity: 0.8;
+        }
+
+        .social-icons {
+            display: flex;
+            gap: 15px;
+        }
+
+        .social-icon {
+            font-size: 1.5rem;
+            color: var(--text-silver);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.4s ease;
+        }
+
+        .social-icon:hover {
+            color: var(--text-neon);
+            transform: scale(1.2) rotate(360deg);
+            box-shadow: 0 0 15px var(--glow-neon);
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid var(--glass-border);
+            font-family: 'Roboto Condensed', sans-serif;
+            font-size: 0.9rem;
+            color: var(--text-silver);
+            opacity: 0.7;
+        }
+        /* ===== END FOOTER ===== */
+
+        /* ===== RESPONSIVE STYLES ===== */
+        @media (max-width: 1200px) {
+            .hero-title {
+                font-size: 4rem;
+            }
+            .section-heading {
+                font-size: 2.5rem;
+            }
+            .model-container {
+                height: 550px;
+            }
+        }
+
+        @media (max-width: 992px) {
+            .container {
+                padding: 1.5rem;
+            }
+            .hero {
+                padding: 3rem 0 2rem;
+            }
+            .hero-title {
+                font-size: 3.5rem;
+            }
+            .hero-subtitle {
+                font-size: 1.3rem;
+            }
+            .section {
+                padding: 2.5rem 0;
+            }
+            .section-heading {
+                font-size: 2.2rem;
+            }
+            .subheading {
+                font-size: 1.3rem;
+            }
+            .model-container {
+                height: 500px;
+            }
+            .glass-card {
+                padding: 1.2rem;
+            }
+            .icon-large {
+                width: 70px;
+                height: 70px;
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header {
+                padding: 15px 4%; 
+            }
+            .header-actions {
+                gap: 8px;
+            }
+            .hamburger {
+                display: block;
+            }
+            nav ul {
+                position: fixed;
+                top: 115px;
+                left: 0;
+                right: 0;
+                background: var(--glass-bg);
+                backdrop-filter: blur(20px);
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                gap: 15px;
+                transform: translateY(-150%);
+                transition: transform 0.4s ease;
+                z-index: 1000;
+            }
+            nav ul.active {
+                transform: translateY(0);
+            }
+            .logo-text {
+                font-size: 1rem;
+                letter-spacing: 2px;
+            }
+            .logo-icon {
+                font-size: 1.8rem;
+            }
+            .language-selector {
+                max-width: 120px;
+                padding: 8px 30px 8px 12px;
+                font-size: 0.9rem;
+                background-position: right 8px center;
+                position: relative;
+            }
+            .language-selector option {
+                margin-top: 3rem;
+            }
+            .account-btn {
+                width: 40px;
+                height: 40px;
+            }
+            .hero-title {
+                font-size: 3rem;
+            }
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+            .section-heading {
+                font-size: 2rem;
+            }
+            .section-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .container {
+                padding: 1rem;
+            }
+            .hero {
+                padding: 3rem 0 1.5rem;
+            }
+            .hero-title {
+                font-size: 2.5rem;
+            }
+            .section {
+                padding: 1rem 0;
+            }
+            .section-heading {
+                font-size: 1.8rem;
+            }
+            .model-container {
+                height: 400px;
+            }
+            .icon-large {
+                width: 60px;
+                height: 60px;
+                font-size: 1.8rem;
+            }
+            .btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.8rem;
+            }
+            .model-overlay > h3 {
+                font-size: 1.8rem;
+            }
+            .footer {
+                padding: 40px 4% 15px;
+            }
+            .footer-brand .logo-text {
+                font-size: 1.5rem;
+            }
+            .footer-brand .logo-icon {
+                font-size: 2rem;
+            }
+            .footer-links h3,
+            .footer-newsletter h3,
+            .footer-social h3 {
+                font-size: 1.2rem;
+            }
+            .footer-links a {
+                font-size: 0.9rem;
+            }
+            .newsletter-form input,
+            .newsletter-form button {
+                font-size: 0.8rem;
+            }
+            .social-icon {
+                width: 35px;
+                height: 35px;
+                font-size: 1.2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2.2rem;
+            }
+            .section-heading {
+                font-size: 1.6rem;
+            }
+            .subheading {
+                font-size: 1.2rem;
+            }
+            .model-overlay > h3 {
+                font-size: 1.5rem;
+            }
+        }
+        /* ===== END RESPONSIVE ===== */
+    </style>
+</head>
+<body>
+
+    <!-- ===== Header ===== -->
+    <header>
+        <a href="#" class="logo">
+            <i class="fas fa-globe-asia logo-icon"></i>
+            <span class="logo-text" data-en="EPIC PAKISTAN" data-ur="ایپک پاکستان">EPIC PAKISTAN</span>
+        </a>
+        <nav>
+            <div class="hamburger"><i class="fas fa-bars"></i></div>
+            <ul>
+                <li><a href="#" data-en="Home" data-ur="ہوم">Home</a></li>
+                <li><a href="#" data-en="Destinations" data-ur="منزلیں">Destinations</a></li>
+                <li><a href="#" data-en="Tours" data-ur="ٹورز">Tours</a></li>
+                <li><a href="#" data-en="Stories" data-ur="کہانیاں">Stories</a></li>
+                <li><a href="./contact.html" data-en="Contact" data-ur="رابطہ">Contact</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <select id="languageSelector" class="language-selector">
+                <option value="en">English</option>
+                <option value="ur">اردو</option>
+            </select>
+            <button class="account-btn"><i class="fas fa-user-circle"></i></button>
+        </div>
+    </header>
+
+    <!-- ===== Alert Section ===== -->
+    <section id="alert"></section>
+
+    <!-- ===== Main Content ===== -->
+    <div class="container">
+        <!-- ===== Hero Section ===== -->
+        <section class="hero">
+            <h1 class="hero-title" data-en="Discover the Soul of Pakistan" data-ur="پاکستان کی روح دریافت کریں">Discover the Soul of Pakistan</h1>
+            <p class="hero-subtitle" data-en="Since 2012, Epic Pakistan Travel has guided over 60,000 adventurers through Pakistan’s stunning landscapes including Naran Kaghan, lush Kalasha Valleys, Kumrat Valley, Lake Saif-ul-Maluk, from the Karakoram’s peaks to Sindh’s deserts. We craft sustainable, immersive journeys that connect you with local culture and communities." data-ur="۲۰۱۲ سے، ایپک پاکستان ٹریول نے ۶۰,۰۰۰ سے زائد سیاحوں کو پاکستان کے حیرت انگیز مناظر بشمول ناران کاغان، سرسبز کالاشہ وادیاں، کومرت وادی، جھیل سیف الملوک، قراقرم کی چوٹیوں سے سندھ کے صحراؤں تک رہنمائی فراہم کی ہے۔ ہم پائیدار، مشغول کن سفر تیار کرتے ہیں جو آپ کو مقامی ثقافت اور برادریوں سے جوڑتے ہیں۔">Since 2012, Epic Pakistan Travel has guided over 60,000 adventurers through Pakistan’s stunning landscapes including Naran Kaghan, lush Kalasha Valleys, Kumrat Valley, Lake Saif-ul-Maluk, from the Karakoram’s peaks to Sindh’s deserts. We craft sustainable, immersive journeys that connect you with local culture and communities.</p>
+            <!-- ===== Button: Triggers exploreTours() to redirect to tours page ===== -->
+            <button class="btn" onclick="exploreTours()" aria-label="Explore our tour packages" data-en="Explore Tours" data-ur="ٹورز دریافت کریں">Explore Tours <i class="fas fa-compass"></i></button>
+        </section>
+
+        <!-- ===== Fleet Excellence Center ===== -->
+        <section class="section">
+            <h2 class="section-heading" data-en="Fleet Excellence Center" data-ur="بہترین گاڑیوں کا مرکز">Fleet Excellence Center</h2>
+            <div class="model-container">
+                <div class="model-overlay">
+                    <h3 data-en="Premium Vehicles, Unmatched Safety" data-ur="اعلیٰ ترین گاڑیاں، بے مثال حفاظت">Premium Vehicles, Unmatched Safety</h3>
+                    <p data-en="Our fleet of 50+ vehicles, including Toyota Land Cruisers and eco-friendly hybrids, is optimized for Pakistan’s diverse terrains, from rugged mountains to urban centers." data-ur="ہمارے ۵۰ سے زائد گاڑیوں کے بیڑے، بشمول ٹویوٹا لینڈ کروزر اور ماحول دوست ہائبرڈ گاڑیاں، پاکستان کے متنوع خطوں کے لیے موزوں ہیں، جو پہاڑی علاقوں سے لے کر شہری مراکز تک پھیلے ہوئے ہیں۔">Our fleet of 50+ vehicles, including Toyota Land Cruisers and eco-friendly hybrids, is optimized for Pakistan’s diverse terrains, from rugged mountains to urban centers.</p>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="glass-card">
+                    <div class="icon-large" aria-hidden="true">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="subheading" data-en="Maintenance Logs" data-ur="دیکھ بھال کے ریکارڈ">Maintenance Logs</h3>
+                    <p data-en="Our vehicles undergo AI-driven predictive maintenance, ensuring reliability. Fleet includes SUVs for the Karakoram Highway and vans for group tours." data-ur="ہماری گاڑیاں مصنوعی ذہانت سے چلنے والی پیشگی دیکھ بھال سے گزرتی ہیں، جو استحکام کو یقینی بناتی ہے۔ بیڑے میں قراقرم ہائی وے کے لیے ایس یو وی اور گروپ ٹورز کے لیے ویں شامل ہیں۔">Our vehicles undergo AI-driven predictive maintenance, ensuring reliability. Fleet includes SUVs for the Karakoram Highway and vans for group tours.</p>
+                    <ul style="text-align: left; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        <li data-en="100% maintenance compliance" data-ur="۱۰۰٪ دیکھ بھال کی پابندی">100% maintenance compliance</li>
+                        <li data-en="1.5 million safe kilometers in 2024" data-ur="۲۰۲۴ میں ۱.۵ ملین محفوظ کلومیٹر">1.5 million safe kilometers in 2024</li>
+                        <li data-en="Serviced every 5,000 km" data-ur="ہر ۵,۰۰۰ کلومیٹر پر سروس">Serviced every 5,000 km</li>
+                    </ul>
+                    <!-- ===== Button: Triggers viewMaintenanceRecords() to show logs ===== -->
+                    <button class="btn" onclick="viewMaintenanceRecords()" aria-label="View vehicle maintenance records" data-en="View Records" data-ur="ریکارڈز دیکھیں">View Records <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="glass-card">
+                    <div class="icon-large" aria-hidden="true">
+                        <i class="fas fa-id-card"></i>
+                    </div>
+                    <h3 class="subheading" data-en="Driver Certifications" data-ur="ڈرائیور تصدیقات">Driver Certifications</h3>
+                    <p data-en="Our 100+ drivers are trained in mountain navigation, defensive driving, and multilingual customer service (Urdu, English, Pashto)." data-ur="ہمارے ۱۰۰+ ڈرائیور پہاڑی نیویگیشن، دفاعی ڈرائیونگ، اور کثیر لسانی کسٹمر سروس (اردو، انگریزی، پشتو) میں تربیت یافتہ ہیں۔">Our 100+ drivers are trained in mountain navigation, defensive driving, and multilingual customer service (Urdu, English, Pashto).</p>
+                    <ul style="text-align: left; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        <li data-en="Certified by Pakistan Tourism Board" data-ur="پاکستان ٹورازم بورڈ سے مصدقہ">Certified by Pakistan Tourism Board</li>
+                        <li data-en="300+ training hours annually" data-ur="سالانہ ۳۰۰+ تربیتی گھنٹے">300+ training hours annually</li>
+                        <li data-en="4.9/5 customer rating" data-ur="۴.۹/۵ کسٹمر ریٹنگ">4.9/5 customer rating</li>
+                    </ul>
+                    <!-- ===== Button: Triggers verifyDriverCredentials() to redirect ===== -->
+                    <button class="btn" onclick="verifyDriverCredentials()" aria-label="Verify driver certifications" data-en="Verify Credentials" data-ur="تصدیق کریں">Verify Credentials <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="glass-card">
+                    <div class="icon-large" aria-hidden="true">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="subheading" data-en="Safety Standards" data-ur="حفاظتی معیارات">Safety Standards</h3>
+                    <p data-en="We exceed global standards with GPS tracking, satellite phones, and altitude sickness kits for high-altitude routes like Skardu." data-ur="ہم جی پی ایس ٹریکنگ، سیٹلائٹ فونز، اور اسکردو جیسے اونچائی والے راستوں کے لیے اونچائی کی بیماری کے کٹس کے ساتھ عالمی معیارات سے تجاوز کرتے ہیں۔">We exceed global standards with GPS tracking, satellite phones, and altitude sickness kits for high-altitude routes like Skardu.</p>
+                    <ul style="text-align: left; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        <li data-en="0.03% incident rate over 10 years" data-ur="۱۰ سال میں ۰.۰۳٪ واقعہ کی شرح">0.03% incident rate over 10 years</li>
+                        <li data-en="Bi-monthly safety drills" data-ur="دو ماہی حفاظتی مشقیں">Bi-monthly safety drills</li>
+                        <li data-en="Global insurance partnerships" data-ur="عالمی انشورنس شراکتیں">Global insurance partnerships</li>
+                    </ul>
+                    <!-- ===== Button: Triggers viewSafetyProtocols() to show details ===== -->
+                    <button class="btn" onclick="viewSafetyProtocols()" aria-label="View safety protocols" data-en="Safety Protocols" data-ur="حفاظتی ضوابط">Safety Protocols <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Culinary Standards Hub ===== -->
+        <section class="section">
+            <h2 class="section-heading" data-en="Culinary Standards Hub" data-ur="کھانے پینے کے معیارات">Culinary Standards Hub</h2>
+            <div class="model-container">
+                <div class="model-overlay">
+                    <h3 data-en="Authentic Flavors, Uncompromising Safety" data-ur="اصلی ذائقے، سخت حفاظت">Authentic Flavors, Uncompromising Safety</h3>
+                    <p data-en="Enjoy Pakistan’s culinary heritage with dishes like Balochi Sajji and Peshawari Chapli Kebab, prepared with strict hygiene protocols." data-ur="پاکستان کی کھانوں کی وراثت سے لطف اندوز ہوں جیسے بلوچی سجی اور پشاوری چپلی کباب، جو سخت حفظان صحت کے پروٹوکول کے ساتھ تیار کیے جاتے ہیں۔">Enjoy Pakistan’s culinary heritage with dishes like Balochi Sajji and Peshawari Chapli Kebab, prepared with strict hygiene protocols.</p>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="glass-card">
+                    <div class="icon-large" aria-hidden="true">
+                        <i class="fas fa-utensils"></i>
+                    </div>
+                    <h3 class="subheading" data-en="Food Safety Certificates" data-ur="کھانے کی حفاظت کے سرٹیفکیٹ">Food Safety Certificates</h3>
+                    <p data-en="Our 200+ partner restaurants are audited quarterly to meet ISO 22000 standards, ensuring safe, delicious meals." data-ur="ہمارے ۲۰۰+ پارٹنر ریستورانوں کا سہ ماہی آڈٹ کیا جاتا ہے تاکہ ISO 22000 معیارات کو پورا کیا جا سکے، محفوظ اور مزیدار کھانا یقینی بنایا جا سکے۔">Our 200+ partner restaurants are audited quarterly to meet ISO 22000 standards, ensuring safe, delicious meals.</p>
+                    <ul style="text-align: left; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        <li data-en="99% compliance rate" data-ur="۹۹٪ تعمیل کی شرح">99% compliance rate</li>
+                        <li data-en="100% allergen-free labeling" data-ur="۱۰۰٪ الرجی سے پاک لیبلنگ">100% allergen-free labeling</li>
+                        <li data-en="Local sourcing: 85% ingredients" data-ur="مقامی sourcing: ۸۵٪ اجزاء">Local sourcing: 85% ingredients</li>
+                    </ul>
+                    <!-- ===== Button: Triggers viewFoodSafety() to show certificates ===== -->
+                    <button class="btn" onclick="viewFoodSafety()" aria-label="View food safety certificates" data-en="View Certificates" data-ur="سرٹیفکیٹ دیکھیں">View Certificates <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="glass-card">
+                    <div class="icon-large" aria-hidden="true">
+                        <i class="fas fa-video"></i>
+                    </div>
+                    <h3 class="subheading" data-en="Virtual Kitchen Tours" data-ur="ورچوئل باورچی خانے کے دورے">Virtual Kitchen Tours</h3>
+                    <p data-en="Explore 35+ partner kitchens via 360° tours, showcasing preparation of dishes like Hunza Apricot Stew." data-ur="۳۵+ پارٹنر باورچی خانوں کا ۳۶۰° دوروں کے ذریعے جائزہ لیں، ہنزہ خوبانی اسٹیو جیسے پکوانوں کی تیاری کو دکھاتے ہوئے۔">Explore 35+ partner kitchens via 360° tours, showcasing preparation of dishes like Hunza Apricot Stew.</p>
+                    <ul style="text-align: left; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        <li data-en="Powered by Matterport technology" data-ur="میٹر پورٹ ٹیکنالوجی سے چلنے والا">Powered by Matterport technology</li>
+                        <li data-en="Updated bi-monthly" data-ur="دو ماہی اپ ڈیٹ">Updated bi-monthly</li>
+                    </ul>
+                    <!-- ===== Button: Triggers startVirtualTour() to launch tour ===== -->
+                    <button class="btn" onclick="startVirtualTour()" aria-label="Start virtual kitchen tour" data-en="Take a Tour" data-ur="دورہ کریں">Take a Tour <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="glass-card">
+                    <div class="icon-large" aria-hidden="true">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <h3 class="subheading" data-en="Authenticity Guarantee" data-ur="اصلیت کی ضمانت">Authenticity Guarantee</h3>
+                    <p data-en="Our chefs use generational recipes and organic ingredients like Himalayan pink salt for authentic Pakistani flavors." data-ur="ہمارے شیف اصلی پاکستانی ذائقوں کے لیے نسلوں پرانی ترکیبیں اور ہمالیہ گلابی نمک جیسے نامیاتی اجزاء استعمال کرتے ہیں۔">Our chefs use generational recipes and organic ingredients like Himalayan pink salt for authentic Pakistani flavors.</p>
+                    <ul style="text-align: left; margin-bottom: 1.5rem; font-size: 0.95rem;">
+                        <li data-en="80+ chefs with regional expertise" data-ur="۸۰+ شیف علاقائی مہارت کے ساتھ">80+ chefs with regional expertise</li>
+                        <li data-en="Community-sourced ingredients" data-ur="کمیونٹی سے حاصل کردہ اجزاء">Community-sourced ingredients</li>
+                    </ul>
+                    <!-- ===== Button: Triggers learnAuthenticity() to show details ===== -->
+                    <button class="btn" onclick="learnAuthenticity()" aria-label="Learn about culinary authenticity" data-en="Learn More" data-ur="مزید جانیں">Learn More <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Medical Response Timeline ===== -->
+        <section class="section">
+            <h2 class="section-heading" data-en="Medical Response Timeline" data-ur="طبی ردعمل کا وقت">Medical Response Timeline</h2>
+            <div class="model-container">
+                <div class="model-overlay">
+                    <h3 data-en="Swift Emergency Response" data-ur="فوری ہنگامی ردعمل">Swift Emergency Response</h3>
+                    <p data-en="Partnered with hospitals like Shifa International, our system ensures rapid response across Pakistan’s remote regions." data-ur="شفا انٹرنیشنل جیسے اسپتالوں کے ساتھ شراکت داری، ہمارا نظام پاکستان کے دور دراز علاقوں میں تیز ردعمل کو یقینی بناتا ہے۔">Partnered with hospitals like Shifa International, our system ensures rapid response across Pakistan’s remote regions.</p>
+                </div>
+            </div>
+            <div class="section-content">
+                <div class="glass-card">
+                    <h3 class="subheading" data-en="Initial Alert" data-ur="ابتدائی انتباہ">Initial Alert</h3>
+                    <p data-en="Instant alerts via our app or guide devices to our 24/7 control center in Islamabad." data-ur="ہمارے ایپ یا گائیڈ ڈیوائسز کے ذریعے اسلام آباد میں ہمارے 24/7 کنٹرول سینٹر کو فوری انتباہات۔">Instant alerts via our app or guide devices to our 24/7 control center in Islamabad.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 100%"></div>
+                    </div>
+                    <p data-en="Response Time: &lt;30 seconds | Satellite-enabled" data-ur="ردعمل کا وقت: &lt;۳۰ سیکنڈ | سیٹلائٹ فعال">Response Time: &lt;30 seconds | Satellite-enabled</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="subheading" data-en="First Response" data-ur="پہلا ردعمل">First Response</h3>
+                    <p data-en="Local teams with first-aid kits and satellite phones dispatched within minutes." data-ur="فرسٹ ایڈ کٹس اور سیٹلائٹ فونز کے ساتھ مقامی ٹیمیں منٹوں میں تعینات۔">Local teams with first-aid kits and satellite phones dispatched within minutes.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 96%"></div>
+                    </div>
+                    <p data-en="Response Time: &lt;15 minutes | 15+ regional teams" data-ur="ردعمل کا وقت: &lt;۱۵ منٹ | ۱۵+ علاقائی ٹیمیں">Response Time: &lt;15 minutes | 15+ regional teams</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="subheading" data-en="Medical Assistance" data-ur="طبی امداد">Medical Assistance</h3>
+                    <p data-en="On-call doctors or airlift services provide care, even in high-altitude areas like Gilgit." data-ur="کال پر ڈاکٹر یا ایئر لفٹ سروسز گلگٹ جیسے اونچائی والے علاقوں میں بھی دیکھ بھال فراہم کرتے ہیں۔">On-call doctors or airlift services provide care, even in high-altitude areas like Gilgit.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 98%"></div>
+                    </div>
+                    <p data-en="Response Time: &lt;45 minutes | Aga Khan Health partner" data-ur="ردعمل کا وقت: &lt;۴۵ منٹ | آغا خان ہیلتھ پارٹنر">Response Time: &lt;45 minutes | Aga Khan Health partner</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="subheading" data-en="Resolution" data-ur="حل">Resolution</h3>
+                    <p data-en="Full incident resolution with follow-up care and insurance coordination." data-ur="فالو اپ کیئر اور انشورنس کوآرڈینیشن کے ساتھ واقعہ کا مکمل حل۔">Full incident resolution with follow-up care and insurance coordination.</p>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 99%"></div>
+                    </div>
+                    <p data-en="Average Resolution: 2 hours | 99.8% success rate" data-ur="اوسط حل: ۲ گھنٹے | ۹۹.۸٪ کامیابی کی شرح">Average Resolution: 2 hours | 99.8% success rate</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Our Journey ===== -->
+        <section class="section">
+            <h2 class="section-heading" data-en="Our Journey" data-ur="ہمارا سفر">Our Journey</h2>
+            <div class="section-content">
+                <div class="glass-card">
+                    <h3 class="subheading" data-en="2012: Founded" data-ur="۲۰۱۲: قیام">2012: Founded</h3>
+                    <p data-en="Started with a vision to showcase Pakistan’s beauty, beginning with tours in Hunza Valley." data-ur="پاکستان کی خوبصورتی کو پیش کرنے کے وژن کے ساتھ شروع کیا، ہنزہ ویلی میں ٹورز سے آغاز کیا۔">Started with a vision to showcase Pakistan’s beauty, beginning with tours in Hunza Valley.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="subheading" data-en="2016: Expanded Fleet" data-ur="۲۰۱۶: بیڑے میں توسیع">2016: Expanded Fleet</h3>
+                    <p data-en="Added 25+ eco-friendly vehicles to support sustainable tourism across Pakistan." data-ur="پاکستان بھر میں پائیدار سیاحت کی حمایت کے لیے ۲۵+ ماحول دوست گاڑیاں شامل کیں۔">Added 25+ eco-friendly vehicles to support sustainable tourism across Pakistan.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="subheading" data-en="2020: Digital Transformation" data-ur="۲۰۲۰: ڈیجیٹل تبدیلی">2020: Digital Transformation</h3>
+                    <p data-en="Launched our website with interactive itineraries, serving 15,000+ users." data-ur="ہماری ویب سائٹ کو انٹرایکٹو itineraries کے ساتھ لانچ کیا، ۱۵,۰۰۰+ صارفین کو خدمات فراہم کیں۔">Launched our website with interactive itineraries, serving 15,000+ users.</p>
+                </div>
+                <div class="glass-card">
+                    <h3 class="subheading" data-en="2025: Global Recognition" data-ur="۲۰۲۵: عالمی شناخت">2025: Global Recognition</h3>
+                    <p data-en="Awarded “Best Adventure Travel Company” by World Travel Awards." data-ur="ورلڈ ٹریول ایوارڈز کی جانب سے “بہترین ایڈونچر ٹریول کمپنی” کا ایوارڈ۔">Awarded “Best Adventure Travel Company” by World Travel Awards.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== Website Features ===== -->
+        <section class="section">
+            <h2 class="section-heading" data-en="Explore Our Website" data-ur="ہماری ویب سائٹ دریافت کریں">Explore Our Website</h2>
+            <p style="text-align: center; max-width: 900px; margin: 0 auto 3rem;" data-en="Our website is your one-stop platform for planning unforgettable Pakistan adventures, packed with intuitive tools and resources." data-ur="ہماری ویب سائٹ ناقابل فراموش پاکستان کے adventures کی منصوبہ بندی کے لیے آپ کا ون اسٹاپ پلیٹ فارم ہے، جس میں intuitive tools اور وسائل سے بھرا ہوا ہے۔">Our website is your one-stop platform for planning unforgettable Pakistan adventures, packed with intuitive tools and resources.</p>
+            <div class="section-content">
+                <div class="glass-card">
+                    <div class="icon-large" aria-hidden="true">
+                        <i class="fas fa-map-marked-alt"></i>
+                    </div>
+                    <h3 class="subheading" data-en="Interactive Itineraries" data-ur="انٹرایکٹو itineraries">Interactive Itineraries</h3>
+                    <p data-en="Customize trips across 70+ destinations with drag-and-drop maps and real-time pricing." data-ur="ڈریگ اینڈ ڈراپ maps اور ریئل ٹائم قیمتوں کے ساتھ ۷۰+ منزلوں پر سفر کو اپنی مرضی کے مطابق بنائیں۔">Customize trips across 70+ destinations with drag-and-drop maps and real-time pricing.</p>
+                    <button class="btn" onclick="exploreItineraries()" aria-label="Build a custom travel itinerary" data-en="Build Your Trip" data-ur="اپنا سفر بنائیں">Build Your Trip <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="glass-card">
+                    <div class="icon-large" aria-hidden="true">
+                        <i class="fas fa-comment-dots"></i>
+                    </div>
+                    <h3 class="subheading" data-en="Live Chat Support" data-ur="لائیو چیٹ سپورٹ">Live Chat Support</h3>
+                    <p data-en="Connect with our 24/7 team, fluent in English and Urdu, for instant booking or query assistance." data-ur="فوری بکنگ یا سوالات کی مدد کے لیے ہماری 24/7 ٹیم سے رابطہ کریں، جو انگریزی اور اردو میں روانی رکھتی ہے۔">Connect with our 24/7 team, fluent in English and Urdu, for instant booking or query assistance.</p>
+                    <button class="btn" onclick="openLiveChat()" aria-label="Open live chat support" data-en="Chat Now" data-ur="ابھی چیٹ کریں">Chat Now <i class="fas fa-arrow-right"></i></button>
+                </div>
+                <div class="glass-card">
+                    <div class="icon-large" aria-hidden="true">
+                        <i class="fas fa-globe"></i>
+                    </div>
+                    <h3 class="subheading" data-en="Virtual Destination Tours" data-ur="ورچوئل منزل کے دورے">Virtual Destination Tours</h3>
+                    <p data-en="Preview sites like Badshahi Mosque or Fairy Meadows with 360° tours before booking." data-ur="بکنگ سے پہلے بادشاہی مسجد یا فیئری میڈوز جیسی جگہوں کا ۳۶۰° دوروں کے ذریعے پیش نظارہ کریں۔">Preview sites like Badshahi Mosque or Fairy Meadows with 360° tours before booking.</p>
+                    <button class="btn" onclick="startDestinationTour()" aria-label="Start virtual destination tour" data-en="Explore Now" data-ur="ابھی دریافت کریں">Explore Now <i class="fas fa-arrow-right"></i></button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="footer-container">
+            <div class="footer-brand">
+                <a href="#" class="logo">
+                    <i class="fas fa-globe-asia logo-icon"></i>
+                    <span class="logo-text" data-en="EPIC PAKISTAN" data-ur="ایپک پاکستان">EPIC PAKISTAN</span>
+                </a>
+                <p class="footer-slogan" data-en="Crafting Legendary Journeys Across Pakistan" data-ur="پاکستان بھر میں legendary journeys کی تخلیق">Crafting Legendary Journeys Across Pakistan</p>
+            </div>
+            <div class="footer-links">
+                <h3 data-en="Quick Links" data-ur="فوری لنکس">Quick Links</h3>
+                <ul>
+                    <li><a href="#" data-en="Home" data-ur="ہوم">Home</a></li>
+                    <li><a href="#" data-en="Destinations" data-ur="منزلیں">Destinations</a></li>
+                    <li><a href="#" data-en="Tours" data-ur="ٹورز">Tours</a></li>
+                    <li><a href="#" data-en="Stories" data-ur="کہانیاں">Stories</a></li>
+                    <li><a href="./contact.html" data-en="Contact" data-ur="رابطہ">Contact</a></li>
+                    <li><a href="#" data-en="About Us" data-ur="ہمارے بارے میں">About Us</a></li>
+                    <li><a href="./concierge.html" data-en="concierge" data-ur="خدمات گار">concierge</a></li>
+                    <li><a href="./travel guid.html" data-en="Travel Guide" data-ur="رہنما سفر">Travel Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-newsletter">
+                <h3 data-en="Stay Connected" data-ur="جڑے رہیں">Stay Connected</h3>
+                <div class="newsletter-form">
+                    <input type="email" id="newsletterEmail" placeholder="Enter your email" data-en-placeholder="Enter your email" data-ur-placeholder="اپنا ای میل درج کریں">
+                    <button id="newsletterSubmit" data-en="Subscribe" data-ur="سبسکرائب">Subscribe</button>
+                </div>
+                <p class="newsletter-text" data-en="Join our newsletter for exclusive offers and travel updates!" data-ur="خصوصی پیشکشوں اور سفر کی اپ ڈیٹس کے لیے ہمارے نیوز لیٹر میں شامل ہوں!">Join our newsletter for exclusive offers and travel updates!</p>
+            </div>
+            <div class="footer-social">
+                <h3 data-en="Follow Us" data-ur="ہمیں فالو کریں">Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#" class="social-icon"><i class="fab fa-x"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="social-icon"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer-bottom">
+            <p>&copy; <span id="copyrightYear"></span> <span data-en="Epic Pakistan. All Rights Reserved." data-ur="ایپک پاکستان۔ جملہ حقوق محفوظ ہیں۔">Epic Pakistan. All Rights Reserved.</span></p>
+        </div>
+    </footer>
+
+    <script>
+        // ===== Header Elements =====
+        const navUl = document.querySelector('nav ul');
+        const hamburger = document.querySelector('.hamburger');
+        const header = document.querySelector('header');
+        const languageSelector = document.getElementById('languageSelector');
+
+        // ===== Header Hover State Tracking =====
+        let isHeaderHovered = false;
+
+        // ===== Set Current Year in Footer =====
+        document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+
+        // ===== Hamburger Menu Toggle =====
+        hamburger.addEventListener('click', () => {
+            navUl.classList.toggle('active');
+            // ===== Keep Header Visible When Menu is Active =====
+            if (navUl.classList.contains('active')) {
+                header.classList.add('visible');
+            }
+        });
+
+        // ===== Header Hover Logic =====
+        header.addEventListener('mouseenter', () => {
+            isHeaderHovered = true;
+            header.classList.add('visible');
+        });
+
+        header.addEventListener('mouseleave', () => {
+            isHeaderHovered = false;
+            // ===== Only Hide if Menu is Not Active =====
+            if (!navUl.classList.contains('active')) {
+                header.classList.remove('visible');
+            }
+        });
+
+        // ===== Show Header When Mouse Near Top of Page =====
+        document.addEventListener('mousemove', (e) => {
+            if (e.clientY <= 50) {
+                header.classList.add('visible');
+            } else if (!isHeaderHovered && !navUl.classList.contains('active')) {
+                header.classList.remove('visible');
+            }
+        });
+
+        // ===== Language Switcher with RTL/LTR Support =====
+        languageSelector.addEventListener('change', () => {
+            const lang = languageSelector.value;
+            switchLanguage(lang);
+        });
+
+        // ===== Language Switching Function =====
+        function switchLanguage(lang) {
+            // ===== Set Document Direction =====
+            document.documentElement.dir = lang === 'ur' ? 'rtl' : 'ltr';
+            
+            // ===== Update All Elements with Data Attributes =====
+            document.querySelectorAll('[data-en], [data-ur]').forEach(element => {
+                if (element.hasAttribute(`data-${lang}`)) {
+                    const text = element.getAttribute(`data-${lang}`);
+                    
+                    // ===== Handle Input Placeholders Separately =====
+                    if (element.tagName === 'INPUT' && element.hasAttribute(`data-${lang}-placeholder`)) {
+                        element.placeholder = element.getAttribute(`data-${lang}-placeholder`);
+                    } else {
+                        element.textContent = text;
+                    }
+                }
+            });
+
+            // ===== RESETING STYLING OF THE PAGE WHEN SWITCHED TO URDU LANGUAGE
+            if (lang === 'ur') {
+                document.querySelector('header').classList.add('urduHeader');
+                document.querySelector('.logo-icon').classList.add('urdu-logo-icon');
+                document.querySelector('.logo-text').classList.add('urdu-logo-icon');
+
+                document.querySelector('.hero-title').classList.add('urdu-title')
+                document.querySelectorAll('.model-container').forEach(container => {
+                    container.classList.add('urdu-model-container');
+                });
+
+                document.querySelectorAll('.footer-links ul li a').forEach(links =>{
+                    links.addEventListener('mouseenter', () => {
+                        links.style.transform = 'translateX(-10px)';
+                    });
+
+                    links.addEventListener('mouseleave', () => {
+                        links.style.transform = 'translateX(0px)';
+                    });
+                })
+            } else {
+               document.querySelector('header').classList.remove('urduHeader');
+                document.querySelector('.logo-icon').classList.remove('urdu-logo-icon');
+                document.querySelector('.logo-text').classList.remove('urdu-logo-icon');
+
+                document.querySelector('.hero-title').classList.remove('urdu-title')
+                document.querySelectorAll('.model-container').forEach(container => {
+                    container.classList.remove('urdu-model-container');
+                }); 
+            }
+        }
+
+        // ===== Show Alert Function =====
+        function showAlert(message) {
+            const alert = document.getElementById('alert');
+            alert.textContent = message;
+            alert.style.display = 'block';
+            
+            setTimeout(() => {
+                alert.style.display = 'none';
+            }, 3000);
+        }
+
+        // ===== Button Functions =====
+        function openAccount() {
+            if (lang === 'en') {
+                alert('Opening account settings... Log in or sign up.');
+                console.log('Clicked account button');
+            } else {
+                alert('اکاؤنٹ کی ترتیبات کھول رہا ہے... لاگ ان یا سائن اپ کریں۔')
+                console.log('اکاؤنٹ بٹن پر کلک کیا۔');
+            }
+        }
+
+        function exploreTours() {
+            alert('Redirecting to Tours page... Discover our curated adventures!');
+            console.log('Clicked Explore Tours');
+            // window.location.href = '/tours';
+        }
+
+        function viewMaintenanceRecords() {
+            alert('Maintenance Logs: Vehicle PK-003 serviced on Aug 22, 2025 - Full diagnostic completed.');
+            console.log('Accessed maintenance records');
+        }
+
+        function verifyDriverCredentials() {
+            alert('Driver Credentials: Verified with Pakistan Motorway Police licenses.');
+            console.log('Verified driver credentials');
+            // window.location.href = '/credentials';
+        }
+
+        function viewSafetyProtocols() {
+            alert('Safety Protocols: Mandatory seatbelts, 80km/h max speed in mountains, bi-monthly audits.');
+            console.log('Viewed safety protocols');
+        }
+
+        function viewFoodSafety() {
+            alert('Food Safety Certificates: All restaurants meet ISO 22000 standards, audited by SGS.');
+            console.log('Viewed food safety certificates');
+        }
+
+        function startVirtualTour() {
+            alert('Launching 360° kitchen tour for Karachi’s top restaurant...');
+            console.log('Started virtual kitchen tour');
+        }
+
+        function learnAuthenticity() {
+            alert('Authenticity: Recipes sourced from local families, using spices like Kashmiri saffron.');
+            console.log('Viewed authenticity details');
+        }
+
+        function exploreItineraries() {
+            alert('Redirecting to itinerary builder... Plan your Pakistan adventure!');
+            console.log('Clicked itinerary builder');
+            // window.location.href = '/itineraries';
+        }
+
+        function openLiveChat() {
+            alert('Opening live chat... Connect with our team instantly!');
+            console.log('Opened live chat');
+        }
+
+        function startDestinationTour() {
+            alert('Launching 360° tour of Hunza Valley... Preview your adventure!');
+            console.log('Started destination tour');
+        }
+
+        function subscribeNewsletter() {
+            alert('Thank you for subscribing! Stay tuned for travel updates.');
+            console.log('Subscribed to newsletter');
+        }
+    </script>
+</body>
+</html>
