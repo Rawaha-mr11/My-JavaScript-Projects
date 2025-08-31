@@ -1,0 +1,287 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: auto; 
+    display: flex;   
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SETTING THE BODY BACKGROUND COLOR WHEN HOVER ON HEADER LINK (WOMEN, MEN , OV EXTRA) */
+.scrollBodyColor {
+    background-color: #d1d1d1;
+}
+/* style applied to All a ( Anchor tag ) */
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #000F9F;
+}
+
+/* Slider of the page */
+.slider {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px 0 28px;
+    background-color: #000F9F;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#slider_link {
+    display: flex;
+    padding: 0 10px 0 10px;
+    text-align: center;
+}
+
+.slider>a {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.slider > #slider_link > p > a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Menu icon of the page */
+.menu {
+    display: none;
+}
+.menu i {
+    font-size: 24px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+
+/* MAIN NAVBAR OF THE Page */
+.mainNavbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.navbar {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: rgb(255, 255, 255);
+}
+
+.child {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar > .child_2 > a {
+    font-size: 20px;
+}
+
+.navbar > .child_3 > i {
+    cursor: pointer;
+}
+
+.navbar > .child_3 > i:hover {
+    color: #000F9F;
+}
+
+.cart {
+    display: none;
+}
+
+/* DROPDOWN 1 list of the page */
+.dropDownList1 {
+    width: 100%;
+    height: 73vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 4.1em;
+    left: 0;
+    z-index: 1;
+    display: none;
+    overflow: auto;
+}
+
+.dropDown_child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links_list {
+    width: 50%;
+}
+
+.image_box {
+    display: block;
+}
+
+.dropDownList1 > .dropDown_child > .list_1 > a {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#set_pace {
+    display: block;
+    width: 100%;
+    font-size: 22px;
+}
+#set_pace:hover {
+    color: black;
+}
+
+#ov_run {
+    display: block;
+    text-decoration: underline;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* DROPDOWN 2 list of the page */
+.dropDownList2 {
+    width: 100%;
+    height: 73vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 4.1em;
+    left: 0;
+    z-index: 1;
+    display: none;
+    overflow: auto;
+}
+
+.dropDownList2 > .dropDown_child > .list_1 > a {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+}
+/* DROPDOWN 3 list of the page */
+.dropDownList3 {
+    width: 100%;
+    height: 73vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 4.1em;
+    left: 0;
+    z-index: 999;
+    display: none;
+    overflow: auto;
+}
+
+.dropDownList3 > .dropDown_child > .list_1 > a {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+}
+/* Mobile DropDown of the page */
+.mobile_dropdown {
+    width: 100%;
+    height: 100%;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 100px; 
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 999;
+    overflow: hidden;
+
+}
+
+.mobile_dropdown > a {
+    display: block;
+    padding: 10px;
+    border-bottom: #F8F8F8 dotted;
+}
+
+#user {
+    width: 80%;
+    background-color: #ffffff;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid black;
+}
+
+#user:hover {
+    background-color: #000000;
+    color: white;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* FOR MOBILE & Tablet DISPLAY  */
+
+@media screen and (max-width: 768px) {
+    .child_1 {
+        display: none;
+    }
+    .child_3 {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .mobile_dropdown.show {
+    display: flex;
+    }
+
+    .cart {
+        display: block;
+    }
+
+}

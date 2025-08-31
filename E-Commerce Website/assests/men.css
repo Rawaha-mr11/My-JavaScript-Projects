@@ -1,0 +1,729 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: auto; 
+    display: flex;   
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+/* SETTING THE BODY BACKGROUND COLOR WHEN HOVER ON HEADER LINK (WOMEN, MEN , OV EXTRA) */
+.scrollBodyColor {
+    background-color: #d1d1d1;
+}
+/* style applied to All a ( Anchor tag ) */
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #000F9F;
+}
+
+/* Slider of the page */
+.slider {
+    width: 100%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px 0 28px;
+    background-color: #000F9F;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#slider_link {
+    display: flex;
+    padding: 0 10px 0 10px;
+    text-align: center;
+}
+
+.slider>a {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.slider > #slider_link > p > a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Menu icon of the page */
+.menu {
+    display: none;
+}
+.menu i {
+    font-size: 24px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+
+/* MAIN NAVBAR OF THE Page */
+.mainNavbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.navbar {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: rgb(255, 255, 255);
+}
+
+.child {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar > .child_2 > a {
+    font-size: 20px;
+}
+
+.navbar > .child_3 > i {
+    cursor: pointer;
+}
+
+.navbar > .child_3 > i:hover {
+    color: #000F9F;
+}
+
+.cart {
+    display: none;
+}
+
+/* DROPDOWN 1 list of the page */
+.dropDownList1 {
+    width: 100%;
+    height: 73vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 4.1em;
+    left: 0;
+    z-index: 1;
+    display: none;
+    overflow: auto;
+}
+
+.dropDown_child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links_list {
+    width: 50%;
+}
+
+.image_box {
+    display: block;
+}
+
+.dropDownList1 > .dropDown_child > .list_1 > a {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#set_pace {
+    display: block;
+    width: 100%;
+    font-size: 22px;
+}
+#set_pace:hover {
+    color: black;
+}
+
+#ov_run {
+    display: block;
+    text-decoration: underline;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* DROPDOWN 2 list of the page */
+.dropDownList2 {
+    width: 100%;
+    height: 73vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 4.1em;
+    left: 0;
+    z-index: 1;
+    display: none;
+    overflow: auto;
+}
+
+.dropDownList2 > .dropDown_child > .list_1 > a {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+}
+/* DROPDOWN 3 list of the page */
+.dropDownList3 {
+    width: 100%;
+    height: 73vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 4.1em;
+    left: 0;
+    z-index: 999;
+    display: none;
+    overflow: auto;
+}
+
+.dropDownList3 > .dropDown_child > .list_1 > a {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+}
+/* Mobile DropDown of the page */
+.mobile_dropdown {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 0; 
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 2;
+    overflow: hidden;
+
+}
+
+.mobile_dropdown > a {
+    display: block;
+    padding: 10px;
+    border-bottom: #F8F8F8 dotted;
+}
+
+#user {
+    width: 80%;
+    background-color: #ffffff;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid black;
+}
+
+#user:hover {
+    background-color: #000000;
+    color: white;
+}
+
+
+
+/* MAIN CONTENT OF THE PAGE */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/*  CHILD 1 OF MAIN OF THE PAGE */
+.child1 {
+    width: 100%;
+    text-align: center;
+    padding: 2em;
+}
+
+.child1 h1 {
+    font-size: 4em;
+    font-family: "merlo";
+    color: #202020;
+}
+
+hr {
+    line-height: 1px;
+    color: #737373;
+}
+
+/*  CHILD 2 OF MAIN OF THE PAGE */
+.child2 {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    padding: 0.5em 5em 0.5em 5em;
+    position: sticky;
+    z-index: 1;
+    top: 65px;
+}
+
+.child2right,.child2Left {
+    display: flex;
+}
+
+/* LEFT LINKS */
+.child2Left {
+    width: 90%;
+    float: left;
+    gap: 1em;
+}
+
+.mainLink {
+    font-size: 0.9em;
+    transition: transform 0.2s ease;
+}
+
+.mainLink:hover {
+    color: #000F9F;
+    transform: translateY(0);
+}
+
+.mainLink:active {
+    transform: translateY(-2px);
+}
+
+#Gender {
+    display: flex;
+    align-items: center;
+    padding: 0.3em;
+}
+
+.colorbox {
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    background-color: #000000;
+}
+
+
+.lineBreak  {
+    line-height: 2em;
+    color: #737373;
+}
+
+.clearAll {
+    display: flex;
+    align-items: center;
+    gap: 2em;
+}
+
+.clearAll a {
+    font-size: 0.9em;
+    margin-top: 0.4em;
+    color: #202020;
+}
+
+/* LEFT MOBILE LINKS */
+.filter {
+    width: 80%;
+    display: none;
+    padding: 0 0 0.5em 0;
+    position: relative;
+}
+.filterChildContainer {
+    display: none;
+}
+
+.filterChild {
+    width: 29.7em;
+    height: 60vh;
+    display: none;
+    position: absolute;
+    top: 2em;
+    left: -2.5em;
+    z-index: 1;
+    padding: 1em;
+    overflow: auto;
+    background-color: #ffffff;
+
+}
+
+#gender-sec,#size-sec, #color-sec, #price-sec {
+    width: 100%;
+    height: auto;
+    padding: 0.5em 0 0.5em 0;
+}
+
+#genderForm {
+    width: 100%;
+    /* height: 20vh; */
+}
+
+#genderForm1, #sizeForm1, #colorForm1, #priceForm1 {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-items: center;
+    gap: 1em;
+}
+
+#genderForm1 {
+    text-align: center;
+}
+
+input[type="radio"] {
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    appearance: none;
+    margin-top: 5px;
+    outline: none;
+    border: 2px solid;
+}
+
+input[type="radio"]:checked {
+    background-color: #000000;
+    padding: 2px;
+}
+
+#apply1 {
+    width: 100%;
+    display: none;
+    padding: 1em;
+    margin-top: 0.5em;
+    border: 2px solid ;
+    font-size: 1em;
+    font-weight: 500;
+    line-height: 1em;
+    text-align: center;
+    border-radius: 2em;
+    background-color: #202020;
+    color: #ffffff;
+}
+#apply1:hover {
+    background-color: #000F9F;
+}
+
+
+/* RIGHT LINKS */
+.child2right {
+    width: 10%;
+    float: right;
+}
+
+.form {
+    width: auto;
+    /* border: 1px solid; */
+    padding: 0.3em;
+}
+
+#genderForm, #sizeForm, #colorForm, #priceForm, #featuredForm {
+    display: none;
+    position: absolute;
+    width: 7em;
+    padding: 0.5em;
+    z-index: 1;
+    background-color: white;
+    color: #202020;
+    border-radius: 0.8em;
+    box-shadow: 0.5px 0.5px 10px #d1d1d1, -0.5px -0.5px 10px #d1d1d1;
+    top: 2.3em;
+    margin-left: -1em;
+}
+
+
+
+/*  CHILD 3 OF MAIN OF THE PAGE */
+.child3 {
+    width: 100%;
+    /* border-top: 1px solid #737373; */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 1em 5em 1em 5em;
+}
+
+.box {
+    width: 21.6em;
+    height: 35em;
+}
+
+.box:hover #colorAddCart {
+    display: flex;
+}
+
+.box:hover .prevBtn {
+    display: block;
+}
+
+.box:hover .nextBtn {
+    display: block;
+}
+
+.boxChild1 {
+    position: relative;
+}
+
+.boxChild1 img {
+    width: 100%;
+    height: 28em;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+}
+
+.colorAddCart {
+    width: 20em;
+    height: 2.5em;
+    background-color: #ffffff;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 1em;
+    left: 0.8em;
+}
+#addCart {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 600;
+    color: #202020;
+    gap: 3px;
+}
+
+#addCart:hover {
+    color: #202020;
+}
+
+.prevBtn,.nextBtn {
+    display: none;
+    color: white;
+    position: absolute;
+    top: 14em; 
+    cursor: pointer;
+}
+
+.prevBtn {
+    left: 0.8em;
+}
+
+.nextBtn {
+    right: 0.8em;
+}
+
+#orderlink {
+    font-family: "merlo";
+}
+
+#para1 {
+    color: #737373;
+    font-size: 0.94em;
+    font-weight: 600;
+}
+
+#para2 {
+    font-size: 0.94em;
+    font-weight: 600;
+}
+
+
+/* CHILD 4 OF MAIN OF THE PAGE */
+.child4 {
+    width: 43%;
+    padding: 3em 5em 3em 5em;
+    margin-bottom: 1em;
+}
+
+.child4 a {
+    display: flex;
+    align-items: center;
+}
+
+.fa-plus {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.9em;
+    font-weight: 700;
+    color: #202020;
+}
+
+.paraContainer {
+    display: none;
+}
+
+
+#child4Para {
+    margin-top: 1em;
+    font-family: "merlo";
+    font-size: 0.94em;
+}
+
+#child4Para1 {
+    font-family: "merlo";
+    font-size: 0.94em;
+}
+
+
+.paraContainer {
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.paraContainer.show {
+    display: block;
+    animation: fadeIn 0.5s;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+
+
+/* FOOTER OF THE PAGE */
+footer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid #EFEFEF;
+    padding: 1.5em;
+    gap: 2em;
+}
+
+.panel {
+    width: 100%;   
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.panel1_child1, .panel1_child2 {
+    width: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+}
+
+.panel2 p {
+    font-size: 0.89em;
+    font-weight: 500;
+    color: #737373;
+}
+
+
+
+
+
+
+
+
+
+/* FOR MOBILE & Tablet DISPLAY  */
+
+@media screen and (max-width: 768px) {
+    .child_1 {
+        display: none;
+    }
+    .child_3 {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .mobile_dropdown.show {
+    display: flex;
+    }
+
+    .cart {
+        display: block;
+    }
+
+    .child2 {
+        padding: 0 1em 0 1em;
+    }
+    .child2Left {
+        display: none;
+    }
+
+    .filter {
+        display: block;
+        width: 70%;
+    }
+
+    #genderForm1, #sizeForm1, #colorForm1, #priceForm1 {
+        display: flex;
+    }
+    
+    .child2right {
+        width: 15%;
+        position: relative;
+    }
+    
+    .child3 {
+        padding: 1em;
+    }
+
+    .box {
+        width: 45%;
+    }
+
+    .child4 {
+        width: 60%;
+        padding: 1em;
+    }
+
+    
+
+
+/* Footer Links */
+    .panel1_child1, .panel1_child2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: start;
+        align-items: start;
+        gap: 1.3em;
+    }
+}
+
+
+
+
+@media screen and (max-width: 580px) {
+    .child2right {
+        width: 19%;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    .child4 {
+        width: 100%;
+        padding: 1em;
+    }
+}

@@ -1,0 +1,807 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        /*  CHILD 3 OF MAIN OF THE PAGE */
+.child3 {
+    width: 100%;
+    /* border-top: 1px solid #737373; */
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    flex-wrap: wrap;
+    gap: 2em;
+    padding: 1em 5em 1em 5em;
+}
+
+.box {
+    width: 21.6em;
+    height: 35em;
+}
+
+.box:hover #colorAddCart {
+    display: flex;
+}
+
+
+
+.boxChild1 {
+    position: relative;
+}
+
+.boxChild1 img {
+    width: 100%;
+    height: 28em;
+    object-fit: cover;
+}
+
+.colorAddCart {
+    width: 20em;
+    height: 2.5em;
+    background-color: #ffffff;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    bottom: 1em;
+    left: 0.8em;
+}
+#addCart {
+    display: flex;
+    align-items: center;
+    font-size: 1em;
+    font-weight: 600;
+    color: #202020;
+    gap: 3px;
+}
+
+#addCart:hover {
+    color: #202020;
+}
+
+.prevBtn1,.nextBtn1 {
+    display: none;
+    color: white;
+    position: absolute;
+    top: 14em; 
+    cursor: pointer;
+}
+
+.prevBtn1 {
+    left: 0.8em;
+}
+
+.nextBtn1 {
+    right: 0.8em;
+}
+
+#orderlink {
+    font-family: "merlo";
+}
+
+#para1 {
+    color: #737373;
+    font-size: 0.94em;
+    font-weight: 600;
+}
+
+#para2 {
+    font-size: 0.94em;
+    font-weight: 600;
+}
+
+.box:hover .prevBtn1 {
+    display: block;
+}
+
+.box:hover .nextBtn1 {
+    display: block;
+}
+
+    </style>
+</head>
+<body>
+     <div class="box box1" id="box">
+                <div class="boxChild1" id="boxChild1">
+                    <img src="./images/e93.webp" alt="img" id="box1Child1_Image">
+                    <div class="prevBtn1"><i class="fa fa-chevron-left"></i></div>
+                    <div class="nextBtn1"><i class="fa fa-chevron-right"></i></div>
+                    <div class="colorAddCart" id="colorAddCart">
+                            <a href="#" id="addCart"><span>&#43;</span> Quick Add</a>
+                    </div>
+                </div>
+                <div class="boxChild2">
+                    <div class="color">
+                        <input type="color" value="#7F0C0E" id="color" disabled>
+                        <input type="color" value="#012106" id="color" disabled>
+                        <input type="color" value="#020f4a" id="color" disabled>
+                    </div>
+                    <a href="#" id="orderlink">Stylish Polo T-shirt & Trouser For Men</a>
+                    <p id="para1">Pk cotton,  terry</p>
+                    <p id="para2">$58</p>
+                </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+            <script>
+                 let boxChild1_Images = [
+    "./images/e93.webp", // starting image
+    "./images/e94.webp",
+    "./images/e95.webp"
+];
+
+let imageChangeValue = 0;
+let boxChild1 = document.getElementById("box1Child1_Image");
+
+function showImage(index) {
+    boxChild1.src = boxChild1_Images[index];
+}
+
+function prevBtn1() {
+    imageChangeValue = (imageChangeValue - 1 + boxChild1_Images.length) % boxChild1_Images.length;
+    showImage(imageChangeValue);
+}
+
+function nextBtn1() {
+    imageChangeValue = (imageChangeValue + 1) % boxChild1_Images.length;
+    showImage(imageChangeValue);
+}
+
+document.querySelector(".prevBtn1").addEventListener("click", prevBtn1);
+document.querySelector(".nextBtn1").addEventListener("click", nextBtn1);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// JAVASCRIPT OBJECT
+// In JavaScript, an object is a fundamental data type used to store collections of related data and functionality. It is a collection of named values, referred to as properties, and functions associated with those properties, known as methods.
+
+// let person = {
+//     name: "M.Rawaha",
+//     age: 20,
+//     gender: "Male",
+//     myTeacher: {
+//         instructer: "Tatheer",
+//         course: "WMA"
+//     },
+//     greet: function(){
+//         console.log(`${this.name}, ${this.age}`);  
+//     }
+// }
+
+
+// person.name = "M.Habab";
+
+// console.log(person.greet());
+// console.log(person.myTeacher.instructer);
+
+
+
+// let myPet = {
+//     name: "volly",
+//     type: "Parret",
+//     age: 1,
+//     owner: {
+//         name: "M.Rawaha",
+//         Contact: "03028053159",
+//         intro: function (pet) {
+//             console.log(`Hi, I am ${pet.name}, a ${pet.type}, ${pet.age} years old. My Owner name is ${pet.ownerName}`);
+//         }
+//     },
+//     intro: function () {
+//             console.log(`Hi, I am ${this.name}, a ${this.type}, ${this.age} years old. My Owner name is ${this.ownerName}`);
+    
+//     }
+// }
+
+// console.log(myPet.owner.intro());
+// console.log(myPet.intro());
+
+
+// myPet.language = "mai ne urdu bi seeki hai";
+// myPet.owner.student = "KMU AND SAYLANI"
+// console.log(myPet.language);
+
+// console.log(myPet.owner.student);
+
+
+
+
+// let car = new Date();
+
+// car.name = "Mercedes";
+// car.type = "Grandi";
+// Car.model = "2025";
+// car.color = "Green";
+
+// console.log(car);
+
+
+            </script>
+
+
+
+
+
+</body>
+</html> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Gallery with Auto-Slider</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #f5f7fa 0%, #e4edf5 100%);
+            padding: 30px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            text-shadow: 1px 1px 3px rgba(0,0,0,0.1);
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: #7f8c8d;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+        
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 20px;
+        }
+        
+        .box {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+        }
+        
+        .boxChild1 {
+            position: relative;
+            height: 280px;
+            overflow: hidden;
+        }
+        
+        .product-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 0.5s ease;
+        }
+        
+        .prevBtn, .nextBtn {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            opacity: 0;
+            transition: opacity 0.3s ease, background 0.2s ease;
+            z-index: 10;
+        }
+        
+        .prevBtn:hover, .nextBtn:hover {
+            background: white;
+        }
+        
+        .prevBtn {
+            left: 15px;
+        }
+        
+        .nextBtn {
+            right: 15px;
+        }
+        
+        .box:hover .prevBtn, 
+        .box:hover .nextBtn {
+            opacity: 1;
+        }
+        
+        .prevBtn i, .nextBtn i {
+            font-size: 18px;
+            color: #2c3e50;
+        }
+        
+        .colorAddCart {
+            position: absolute;
+            bottom: 20px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: all 0.4s ease;
+        }
+        
+        .box:hover .colorAddCart {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        #addCart {
+            background: #e74c3c;
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 4px 15px rgba(231, 76, 60, 0.3);
+            transition: all 0.3s ease;
+        }
+        
+        #addCart:hover {
+            background: #c0392b;
+            transform: scale(1.05);
+        }
+        
+        #addCart span {
+            font-size: 1.4rem;
+        }
+        
+        .boxChild2 {
+            padding: 20px;
+        }
+        
+        .color {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .color input {
+            width: 25px;
+            height: 25px;
+            border-radius: 50%;
+            border: 2px solid white;
+            cursor: pointer;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+        
+        .color input:hover {
+            transform: scale(1.1);
+        }
+        
+        #orderlink {
+            display: block;
+            font-size: 1.1rem;
+            color: #2c3e50;
+            text-decoration: none;
+            font-weight: 600;
+            margin-bottom: 10px;
+            transition: color 0.2s ease;
+            line-height: 1.4;
+        }
+        
+        #orderlink:hover {
+            color: #e74c3c;
+        }
+        
+        #para1 {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            margin-bottom: 8px;
+        }
+        
+        #para2 {
+            color: #2c3e50;
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+        
+        .indicator {
+            position: absolute;
+            bottom: 15px;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            gap: 6px;
+            z-index: 5;
+        }
+        
+        .dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.5);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .dot.active {
+            background: white;
+            transform: scale(1.3);
+        }
+        
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        
+        .feature {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            width: 280px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .feature i {
+            font-size: 2.5rem;
+            color: #e74c3c;
+            margin-bottom: 15px;
+        }
+        
+        .feature h3 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .feature p {
+            color: #7f8c8d;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            h1 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Fashion Collection</h1>
+            <p class="subtitle">Discover our premium collection of stylish apparel. Each item features multiple color options and high-quality materials.</p>
+        </header>
+        
+        <div class="gallery">
+            <!-- Product 1 -->
+            <div class="box box1" id="box">
+                <div class="boxChild1" id="boxChild1">
+                    <img src="https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Men's Fashion" class="product-image">
+                    <div class="prevBtn prevBtn1"><i class="fa fa-chevron-left"></i></div>
+                    <div class="nextBtn nextBtn1"><i class="fa fa-chevron-right"></i></div>
+                    <div class="indicator">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="colorAddCart" id="colorAddCart">
+                        <a href="#" id="addCart"><span>&#43;</span> Quick Add</a>
+                    </div>
+                </div>
+                <div class="boxChild2">
+                    <div class="color">
+                        <input type="color" value="#7F0C0E" disabled>
+                        <input type="color" value="#012106" disabled>
+                        <input type="color" value="#020f4a" disabled>
+                    </div>
+                    <a href="#" id="orderlink">Stylish Polo T-shirt & Trouser For Men</a>
+                    <p id="para1">Premium cotton, soft terry material</p>
+                    <p id="para2">$58.00</p>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="box box1">
+                <div class="boxChild1">
+                    <img src="https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Women's Fashion" class="product-image">
+                    <div class="prevBtn prevBtn2"><i class="fa fa-chevron-left"></i></div>
+                    <div class="nextBtn nextBtn2"><i class="fa fa-chevron-right"></i></div>
+                    <div class="indicator">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="colorAddCart" id="colorAddCart">
+                        <a href="#" id="addCart"><span>&#43;</span> Quick Add</a>
+                    </div>
+                </div>
+                <div class="boxChild2">
+                    <div class="color">
+                        <input type="color" value="#f5c6c6" disabled>
+                        <input type="color" value="#c8e6f5" disabled>
+                        <input type="color" value="#f0f0f0" disabled>
+                    </div>
+                    <a href="#" id="orderlink">Elegant Summer Dress for Women</a>
+                    <p id="para1">Lightweight linen, breathable fabric</p>
+                    <p id="para2">$64.99</p>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="box box1">
+                <div class="boxChild1">
+                    <img src="https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Casual Wear" class="product-image">
+                    <div class="prevBtn prevBtn3"><i class="fa fa-chevron-left"></i></div>
+                    <div class="nextBtn nextBtn3"><i class="fa fa-chevron-right"></i></div>
+                    <div class="indicator">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="colorAddCart" id="colorAddCart">
+                        <a href="#" id="addCart"><span>&#43;</span> Quick Add</a>
+                    </div>
+                </div>
+                <div class="boxChild2">
+                    <div class="color">
+                        <input type="color" value="#2c3e50" disabled>
+                        <input type="color" value="#7f8c8d" disabled>
+                        <input type="color" value="#e74c3c" disabled>
+                    </div>
+                    <a href="#" id="orderlink">Casual Denim Jacket Unisex</a>
+                    <p id="para1">Premium denim, comfortable fit</p>
+                    <p id="para2">$79.99</p>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="box box1">
+                <div class="boxChild1">
+                    <img src="https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80" alt="Formal Wear" class="product-image">
+                    <div class="prevBtn prevBtn4"><i class="fa fa-chevron-left"></i></div>
+                    <div class="nextBtn nextBtn4"><i class="fa fa-chevron-right"></i></div>
+                    <div class="indicator">
+                        <div class="dot active"></div>
+                        <div class="dot"></div>
+                        <div class="dot"></div>
+                    </div>
+                    <div class="colorAddCart" id="colorAddCart">
+                        <a href="#" id="addCart"><span>&#43;</span> Quick Add</a>
+                    </div>
+                </div>
+                <div class="boxChild2">
+                    <div class="color">
+                        <input type="color" value="#000000" disabled>
+                        <input type="color" value="#2c3e50" disabled>
+                        <input type="color" value="#7f0c0e" disabled>
+                    </div>
+                    <a href="#" id="orderlink">Premium Business Suit</a>
+                    <p id="para1">Wool blend, tailored fit</p>
+                    <p id="para2">$189.99</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="features">
+            <div class="feature">
+                <i class="fas fa-shipping-fast"></i>
+                <h3>Free Shipping</h3>
+                <p>Free worldwide shipping on all orders over $100</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-undo"></i>
+                <h3>30-Day Returns</h3>
+                <p>Not satisfied? Return within 30 days for a full refund</p>
+            </div>
+            <div class="feature">
+                <i class="fas fa-lock"></i>
+                <h3>Secure Payment</h3>
+                <p>All transactions are secure and encrypted</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Image sets for each product
+            const imageSets = [
+                [
+                    "https://images.unsplash.com/photo-1525507119028-ed4c629a60a3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1595959183082-7b570b7e08e2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1620799140408-edc6dcb6d633?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                ],
+                [
+                    "https://images.unsplash.com/photo-1591047139829-d91aecb6caea?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1542295669297-4d352b042bca?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1496747611176-843222e1e57c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                ],
+                [
+                    "https://images.unsplash.com/photo-1534030347209-467a5b0ad3e6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1525450824786-227cbef70703?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                ],
+                [
+                    "https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1593030103066-0093718efeb9?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80",
+                    "https://images.unsplash.com/photo-1593030761757-71fae45fa0e7?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=80"
+                ]
+            ];
+
+            // Initialize each product
+            const products = document.querySelectorAll('.box');
+            const intervals = [];
+            
+            products.forEach((product, index) => {
+                const images = imageSets[index];
+                const imageElement = product.querySelector('.product-image');
+                const prevBtn = product.querySelector('.prevBtn');
+                const nextBtn = product.querySelector('.nextBtn');
+                const dots = product.querySelectorAll('.dot');
+                
+                let currentImageIndex = 0;
+                let interval;
+                
+                // Function to update the displayed image
+                function updateImage() {
+                    imageElement.src = images[currentImageIndex];
+                    
+                    // Update active dot
+                    dots.forEach((dot, i) => {
+                        dot.classList.toggle('active', i === currentImageIndex);
+                    });
+                }
+                
+                // Auto slide function
+                function startAutoSlide() {
+                    interval = setInterval(() => {
+                        currentImageIndex = (currentImageIndex + 1) % images.length;
+                        updateImage();
+                    }, 3000);
+                }
+                
+                // Start auto slide
+                startAutoSlide();
+                intervals.push(interval);
+                
+                // Next button click
+                nextBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    clearInterval(interval);
+                    currentImageIndex = (currentImageIndex + 1) % images.length;
+                    updateImage();
+                    interval = startAutoSlide();
+                });
+                
+                // Previous button click
+                prevBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    clearInterval(interval);
+                    currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+                    updateImage();
+                    interval = startAutoSlide();
+                });
+                
+                // Dot navigation
+                dots.forEach((dot, i) => {
+                    dot.addEventListener('click', () => {
+                        clearInterval(interval);
+                        currentImageIndex = i;
+                        updateImage();
+                        interval = startAutoSlide();
+                    });
+                });
+                
+                // Pause auto slide on hover
+                product.addEventListener('mouseenter', () => {
+                    clearInterval(interval);
+                });
+                
+                // Resume auto slide when mouse leaves
+                product.addEventListener('mouseleave', () => {
+                    clearInterval(interval);
+                    interval = startAutoSlide();
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+<!-- SLIDER OF THE PAGE -->
+    <div class="slider" id="slider">
+
+        <a href="#" onclick="prev()" id="prev"> &#8249; </a>
+        <div id="slider_link">            
+            <p>Ready to show some shin &nbsp; <a href="#">Shop - Shorts & Skorts</a></p>
+        </div>
+        <a href="#" onclick="next()" id="next"> &#8250; </a>
+        
+    </div>
+
+
+<!-- MAIN NAVBAR OF THE PAGE -->
+    <div class="mainNavbar">
+
+<!-- NAVBAR OF THE PAGE -->
+    <div class="navbar">
+
+        <div class="menu" id="menuToggle">
+            <i class="fa fa-bars" id="menuIcon"></i>
+        </div>
+
+        <div class="child child_1">
+            <a href="#" id="women_dropdown" onmouseover="womenDropDownList()">Women</a>
+            <a href="#" id="men_dropdown">Men</a>
+            <a href="#" id="ov_dropdown">OV Extra</a>
+        </div>
+
+
+        <div class="child child_2">
+            <a href="#">Outdoor Voices</a>
+        </div>
+
+
+        <div class="child child_3">
+            <i class="fas fa-search"></i>
+            <i class="fa fa-user"></i>
+            <i class="fa fa-cart-plus"></i>
+        </div>
+
+        <div class="cart">
+            <i class="fa fa-cart-plus"></i>
+        </div>
+
+    </div>
+     
+
+
+
+<!-- DROP DOWN LIST 1 (for women) OF THE PAGE -->
+        <div class="dropDownList1" id="dropDownList1">
+            <div class="dropDown_child links_list">
+                <div class="list_1">
+                    <p>Shop by</p>
+                    <a href="./assests/men.html">New Arrivals</a>
+                    <a href="./assests/men.html">Best Women's</a>
+                    <a href="#">best Sellers</a>
+                    <a href="#">OV Extra</a>
+                </div>
+
+                <div class="list_1">
+                    <p>Apparel + More</p>
+                    <a href="./assests/men.html">Dresses</a>
+                    <a href="./assests/men.html">Tops & Tanks</a>
+                    <a href="">Shorts & Skorts</a>
+                    <a href="">Bras</a>
+                    <a href="#">Leggings</a>
+                    <a href="#">paints</a>
+                    <a href="#">Sweatshits & Jackets</a>
+                    <a href="">Accessories</a>
+                </div>
+
+                <div class="list_1">
+                    <p>Collection</p>
+                    <a href="./assests/men.html">OV summer</a>
+                    <a href="./assests/men.html">OV Run</a>
+                    <a href="">The Everyday Collection</a>
+                    <a href="">CloudKnit</a>
+                    <a href="">RecTreck</a>
+                    <a href="">Gift Cards</a>
+                </div>
+            </div>
+
+            <div class="dropDown_child image_box">
+                <div class="images">
+                    <img src="./assests/images/e1.webp" alt="img" width="250px" height="330px">
+                    <img src="./assests/images/e2.webp" alt="img" width="250px" height="330px">
+                </div>
+                <a href="" id="set_pace">We'll help yu to set the pace.</a>
+                <a href="" id="ov_run">Shop - OV Run</a>
+            </div>
+        </div>
+
+
+<!-- DROP DOWN LIST 2 (for men) OF THE PAGE -->
+        <div class="dropDownList2" id="dropDownList2">
+            <div class="dropDown_child links_list">
+                <div class="list_1">
+                    <p>Shop by</p>
+                    <a href="#">New Arrivals</a>
+                    <a href="./assests/men.html">Best Men's</a>
+                    <a href="#">best Sellers</a>
+                    <a href="#">OV Extra</a>
+                </div>
+
+                <div class="list_1">
+                    <p>Apparel + More</p>
+                    <a href="#">Shorts</a>
+                    <a href="#">Tops</a>
+                    <a href="#">paints</a>
+                    <a href="#">Sweatshits & Jackets</a>
+                    <a href="">Accessories</a>
+                </div>
+
+                <div class="list_1">
+                    <p>Collection</p>
+                    <a href="">OV summer</a>
+                    <a href="">OV Run</a>
+                    <a href="">The Everyday Collection</a>
+                    <a href="">CloudKnit</a>
+                    <a href="">RecTreck</a>
+                    <a href="">Gift Cards</a>
+                </div>
+            </div>
+
+            <div class="dropDown_child image_box">
+                <div class="images">
+                    <img src="./assests/images/e3.webp" alt="img" width="250px" height="330px">
+                    <img src="./assests/images/e4.webp" alt="img" width="250px" height="330px">
+                </div>
+                <a href="" id="set_pace">Lace'em and pace'em.</a>
+                <a href="" id="ov_run">Shop - OV Run</a>
+            </div>
+        </div>
+
+
+<!-- DROP DOWN LIST 3 (for OV Extra) OF THE PAGE -->
+        <div class="dropDownList3" id="dropDownList3">
+            <div class="dropDown_child links_list">
+                <div class="list_1">
+                    <p>Women</p>
+                    <a href="">Dresses & Bodysuits</a>
+                    <a href="#">Tops</a>
+                    <a href="#">Bottoms</a>
+                    <a href="#">Shop All Women</a>
+                </div>
+
+                <div class="list_1">
+                    <p>Men</p>
+                    <a href="#">Tops</a>
+                    <a href="#">Bottoms</a>
+                    <a href="">Shop All  Men</a>
+                </div>
+
+                <div class="list_1">
+                    <p>Others</p>
+                    <a href="">Shop Accessorires</a>
+                    <a href="">Shop All OV Extra</a>
+                </div>
+            </div>
+
+            <div class="dropDown_child image_box">
+                <div class="images">
+                    <img src="./assests/images/e5.webp" alt="img" width="500px" height="330px">
+                </div>
+                <a href="" id="set_pace">We'll help yu to set the pace.</a>
+                <a href="" id="ov_run">Shop - OV Run</a>
+            </div>
+        </div>
+
+
+<!-- MOBILE DROPDOWN LIST -->
+
+        <div class="mobile_dropdown">
+            <a href="./assests/men.html" id="women_mobile">Women</a>
+            <a href="./assests/men.html" id="men_mobile">Men</a>
+            <a href="./assests/men.html" id="ov_mobile">OV Extra</a>
+            <button id="user">Log in</button>
+        </div>
+
+    </div>
+
+
+
+        
+<!-- MAIN CONTENT OF THE FPAGE -->
+
+    <main>
+<!-- CHILD 1 OF MAI OF THE PAGE -->
+        <div class="main_child main_child_1">
+
+<!-- CHILD 1 IMAGE -->
+            <div class="women_dresses">
+                <img src="./assests/images/e9.webp" alt="image" id="women_dresses">
+            </div>
+
+<!-- CHILD 1 INTRO DIV -->
+            <div class="intro">
+                <div class="heading">
+                    <h1>You look good in a dress.​</h1>
+                    <p>Celebrating the start of summer with versatile dresses for unrestricted movement.</p>
+                </div>
+
+                <div class="heading_button">
+                    <button id="Shop_dresses" onclick="shopDresses()">Shop - Dresses</button>
+                </div>
+            </div>
+
+        </div>
+        
+     
+<!-- CHILD 2 OF MAIN OF THE PAGE -->
+        <div class="main_child main_child_2">
+            <h1>The OV Dress Roundup</h1>
+
+            <div class="image_slider_main">
+<!-- PREVIOUS BTN OF CHILD 2 SLIDER -->
+                <div class="prev_btn">
+                    <i class="fa fa-arrow-left"></i>
+                </div>
+
+<!-- IMAGES OF SLIDER OF CHILD 2 -->
+                <div class="slider_images">
+                    <div class="img1">
+                        <img src="./assests/images/e24.webp" alt="img"> 
+                        <a href="#">The Excercise Dress</a> 
+                        <p>6 colors available</p>
+                    </div>
+
+                    <div class="img1">
+                        <img src="./assests/images/e12.webp" alt="img"> 
+                        <a href="#">Outdoor dresses</a> 
+                        <p>2 colors available</p>
+                    </div>
+                    <div class="img1">
+                        <img src="./assests/images/e14.webp" alt="img"> 
+                        <a href="#">Volly Dress</a> 
+                        <p>2 colors available</p>
+                    </div>
+                    <div class="img1">
+                        <img src="./assests/images/e16.webp" alt="img"> 
+                        <a href="#">Warmup Dress</a> 
+                        <p>3 colors available</p>
+                    </div>
+                    <div class="img1">
+                        <img src="./assests/images/e18.webp" alt="img"> 
+                        <a href="#">Jog Dress</a> 
+                        <p>3 colors available</p>
+                    </div>
+                    <div class="img1">
+                        <img src="./assests/images/e20.webp" alt="img"> 
+                        <a href="#">Warmup Dress</a> 
+                        <p>3 colors available</p>
+                    </div>
+                    <div class="img1">
+                        <img src="./assests/images/e22.webp" alt="img"> 
+                        <a href="#">The Excercise Dress</a> 
+                        <p>6 colors available</p>
+                    </div>
+                    <div class="img1">
+                        <img src="./assests/images/e24.webp" alt="img"> 
+                        <a href="#">Outdoor dresses</a> 
+                        <p>2 colors available</p>
+                    </div>
+                    <div class="img1">
+                        <img src="./assests/images/e26.webp" alt="img"> 
+                        <a href="#">Volly Dress</a> 
+                        <p>5 colors available</p>
+                    </div>
+                    <div class="img1">
+                        <img src="./assests/images/e28.webp" alt="img"> 
+                        <a href="#">Volly Dress</a> 
+                        <p>5 colors available</p>
+                    </div>
+                    <div class="img1">
+                        <img src="./assests/images/e30.webp" alt="img"> 
+                        <a href="#">The Excercise Dress</a> 
+                        <p>6 colors available</p>
+                    </div>
+                    <div class="img1">
+                        <img src="./assests/images/e32.webp" alt="img"> 
+                        <a href="#">Volly Dress</a> 
+                        <p>5 colors available</p>
+                    </div>
+                </div>
+
+<!-- NEXT BTN OF CHILD 2 SLIDER -->
+                <div class="next_btn">
+                    <i class="fa fa-arrow-right"></i>
+                </div>
+            </div>
+        </div>
+
+
+<!-- CHILD 3 OF MAIN OF THE PAGE -->
+        <div class="main_child main_child_3">
+            <h1>Summer Essentials</h1>
+            <div class="main_child_3_child">
+
+<!-- CHILD 3 LEFT SIDE IMAGE -->
+                <div class="left_image">
+                    <img src="./assests/images/e34.jpeg" alt="">
+                </div>
+
+
+<!-- CHILD 3 RIGHT SIDE IMAGE -->
+                <div class="right_image">
+
+                    <div class="right_image_1">
+
+                        <figure class="shortsleeves">                            
+                            <img src="./assests/images/e35.webp" alt="">
+                            <figcaption><a href="#" id="shortsleeves">Everyday Shortsleeve</a></figcaption>
+                        </figure>
+
+                         <figure class="recctreck">                            
+                            <img src="./assests/images/e39.webp" alt="">
+                            <figcaption><a href="#" id="recctreck">RecTreck 4" Shorts</a></figcaption>
+                        </figure>
+
+                    </div>
+
+
+                    <div class="right_image_1">
+                        <figure class="shortsleeves">                            
+                            <img src="./assests/images/e45.webp" alt="">
+                            <figcaption><a href="#" id="shortsleeves">RecTreck 7" Shorts</a></figcaption>
+                        </figure>
+
+                         <figure class="recctreck">                            
+                            <img src="./assests/images/e49.webp" alt="">
+                            <figcaption><a href="#" id="recctreck">Everyday Classic Shortsleeve</a></figcaption>
+                        </figure>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+<!-- CHILD 4 OF MAIN OF THE PAGE -->
+        <div class="main_child main_child_4">
+            <button id="ovSummerBtn">Shop - OV Summer</button>
+        </div>
+
+
+<!-- CHILD 5 OF MAIN OF THE PAGE -->
+        <div class="main_child main_child_5">
+
+<!-- CHILD 5 LEFT SIDE IMAGE -->
+            <div class="_image_link">                
+                <h1>Shop Women</h1>
+                <img src="./assests/images/e54.webp" alt="image">
+            </div>
+
+            
+<!-- CHILD 5 RIGHT SIDE IMAGES -->
+            <div class="_image_link">
+                <h1>Shop men</h1>
+                <img src="./assests/images/e55.webp" alt="image">
+            </div>
+
+        </div>
+
+
+<!-- CHILD 6 OF MAIN OF THE PAGE -->
+        <div class="main_child main_child_6">
+            <h1>Doing Things looks good on you.</h1>
+        </div>
+        
+    </main>
+
+
+
+
+
+<!-- FOOTER OF THE PAGE -->
+
+    <footer> 
+
+<!-- PANEL 1 OF FOOTER OF THE PAGE -->
+        <div class="panel panel_1">
+            <h1>Join the Team</h1>
+            <p>Sign up for exclusive OV-only deals and early access to new products.</p>
+            
+            <form action="#" id="emailForm">
+                <label for="email">Email</label> <input type="text" name="email" id="email">
+            </form>
+
+            <h2>Email preference:</h2>
+            <div class="gender">
+                <form action="#">
+                    <input type="radio" name="gender" id="gender"> &nbsp; <label for="gender">Women</label><br>
+                    <input type="radio" name="gender" id="gender"> &nbsp; <label for="gender">men</label><br>
+                    <input type="radio" name="gender" id="gender"> &nbsp; <label for="gender">Both</label>
+                    <input type="submit" value="Sign Up Now" id="signUpBtn">                    
+                </form>
+
+            </div>
+            
+        </div>
+
+
+<!-- PANEL 2 OF FOOTE OF THE PAGE -->
+        <div class="panel panel_2">
+
+<!-- PANEL 2 CHILD 1 -->
+            <div class="panel_2_child1">
+                    <a href="#" id="footerLinks">My Account</a>
+                    <a href="#" id="footerLinks">Fabric</a>
+                    <a href="#" id="footerLinks">Gift Cards</a>
+                    <a href="./assests/return.html" id="footerLinks">Returns</a>
+                    <a href="#" id="footerLinks">Help Center</a>
+                    <a href="./assests/about.html" id="footerLinks">About Us</a>
+
+                <div class="panel_2_iconsLinks">
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-facebook-square"></i>
+                </div>
+
+                <p class="copyright">&COPY;2025 Outdoor Voices</p>
+            </div>
+
+<!-- PANEL 2 CHILD 2 -->
+            <div class="panel_2_child2">
+                <a href="#" id="footerLinks">Accessibility</a>
+                <a href="#" id="footerLinks">Accessibility Widget</a>
+                <a href="#" id="footerLinks">California Residents</a>
+                <a href="./assests/privacy.html" id="footerLinks">Privacy</a>
+                <a href="./assests/" id="footerLinks">Terms</a>
+            </div>
+
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

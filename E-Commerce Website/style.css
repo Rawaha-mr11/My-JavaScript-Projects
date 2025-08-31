@@ -1,0 +1,878 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    width: auto;
+    display: block;
+}
+
+/* SETTING THE BODY BACKGROUND COLOR WHEN HOVER ON HEADER LINK (WOMEN, MEN , OV EXTRA) */
+.scrollBodyColor {
+    background-color: #d1d1d1;
+}
+
+/* style applied to All a ( Anchor tag ) */
+a {
+    text-decoration: none;
+    color: black;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+a:hover {
+    color: #000F9F;
+}
+
+/* Slider of the page */
+.slider {
+    width: auto;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 28px 0 28px;
+    background-color: #000F9F;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+#slider_link {
+    display: flex;
+    padding: 0 10px 0 10px;
+    text-align: center;
+}
+
+.slider>a {
+    color: white;
+    font-size: 28px;
+    margin-bottom: 5px;
+    font-weight: 300;
+}
+
+.slider > #slider_link > p > a {
+    color: white;
+    text-decoration: underline;
+}
+
+/* Menu icon of the page */
+.menu {
+    display: none;
+}
+.menu i {
+    font-size: 24px;
+    transition: color 0.3s ease;
+    cursor: pointer;
+}
+
+
+/* MAIN NAVBAR OF THE Page */
+.mainNavbar {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+.navbar {
+    width: 100%;
+    height: 65px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 30px;
+    background-color: rgb(255, 255, 255);
+}
+
+.child {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar > .child_2 > a {
+    font-size: 20px;
+}
+
+.navbar > .child_3 > i {
+    cursor: pointer;
+}
+
+.navbar > .child_3 > i:hover {
+    color: #000F9F;
+}
+
+.cart {
+    display: none;
+}
+
+/* DROPDOWN 1 list of the page */
+.dropDownList1 {
+    width: 100%;
+    height: 73vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 4.1em;
+    left: 0;
+    z-index: 1;
+    display: none;
+    overflow: auto;
+}
+
+.dropDown_child {
+    display: flex;
+    justify-content: space-between;
+}
+
+.links_list {
+    width: 50%;
+}
+
+.image_box {
+    display: block;
+}
+
+.dropDownList1 > .dropDown_child > .list_1 > a {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#set_pace {
+    display: block;
+    width: 100%;
+    font-size: 22px;
+}
+#set_pace:hover {
+    color: black;
+}
+
+#ov_run {
+    display: block;
+    text-decoration: underline;
+    font-size: 16px;
+    margin-top: 5px;
+}
+
+/* DROPDOWN 2 list of the page */
+.dropDownList2 {
+    width: 100%;
+    height: 73vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 4.1em;
+    left: 0;
+    z-index: 1;
+    display: none;
+    overflow: auto;
+}
+
+.dropDownList2 > .dropDown_child > .list_1 > a {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+}
+/* DROPDOWN 3 list of the page */
+.dropDownList3 {
+    width: 100%;
+    height: 73vh;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 4.1em;
+    left: 0;
+    z-index: 999;
+    display: none;
+    overflow: auto;
+}
+
+.dropDownList3 > .dropDown_child > .list_1 > a {
+    display: block;
+    width: 100%;
+    margin-top: 20px;
+    font-size: 14px;
+}
+/* Mobile DropDown of the page */
+.mobile_dropdown {
+    width: 100%;
+    height: 100vh;
+    display: none;
+    flex-direction: column;
+    background-color: white;
+    position: absolute;
+    top: 0; 
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    z-index: 2;
+    overflow: hidden;
+
+}
+
+.mobile_dropdown > a {
+    display: block;
+    padding: 10px;
+    border-bottom: #F8F8F8 dotted;
+}
+
+#user {
+    width: 80%;
+    background-color: #ffffff;
+    border-radius: 30px;
+    font-size: 18px;
+    font-weight: 600;
+    border: 2px solid black;
+}
+
+#user:hover {
+    background-color: #000000;
+    color: white;
+}
+
+
+
+
+/* Main of the page */
+main {
+    width: auto;
+    display: block;
+    background-color: white;
+}
+
+/* Child_1 of the main of the page */
+.main_child {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.women_dresses {
+    width: auto;
+    height: auto;
+    padding: 0 30px 5px 30px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#women_dresses {
+    width: 93%;
+    height: 100%;
+}
+
+.intro {
+    width: 93%;
+    height: auto;
+    padding: 0 30px 0 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#Shop_dresses {
+    width: 162px;
+    height: 40px;
+    font-size: 17px;
+    font-weight: 600;
+    border: none;
+    border-radius: 30px;
+    background-color: #202020;
+    color: white;
+    margin-top: 22px;
+    transition: 0.35s ease;
+}
+#Shop_dresses:hover {
+    background-color: #727377;
+    cursor: pointer;
+}
+
+
+/* CHILD 2 of main of the page */
+.main_child_2 {
+    /* width: 100; */
+    background-color: #F8F8F8;
+    flex-direction: column;
+    margin-top: 30px;
+    padding: 3em 0 1em 0;
+}
+
+.image_slider_main {
+    width: 97.5%;
+    display: flex;
+}
+
+.prev_btn,.next_btn {
+    width: 60px;
+    height: 60px;
+    position: relative;
+    background-color: #F8F8F8;
+    text-align: center;
+    display: grid;
+    align-items: center;    
+    top: 18.2em; 
+}
+
+.prev_btn {
+    left: 3.5em;
+}
+
+.next_btn {   
+    right: 3.5em;
+}
+
+.prev_btn:hover, .next_btn:hover {
+    color: #000F9F;
+    cursor: pointer;
+}
+
+.slider_images {
+    width: 93%;
+    display: flex;
+    overflow: scroll;
+    padding: 40px 0 40px 0;
+    gap: 0.12em;
+}
+
+.slider_images::-webkit-scrollbar {
+    display: none;
+}
+
+.img1 {
+    display: block;
+}
+.img1 img {
+    width: 300px;
+    height: 398px;
+}
+
+.img1 p {
+    color: #808080;
+    font-size: 0.97em;
+    font-weight: 500;
+}
+
+/* CHILD 3 OF MAIN OF THE PAGE */
+.main_child_3 {
+    width: 100%;
+    padding: 3em 1em 2em 1em
+}
+
+/* .main_child_3 > h1 {
+    margin-top: 2em;
+} */
+
+.main_child_3_child {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2em;
+    /* padding: 0 1em 0 2.59em; */
+    flex-wrap: wrap;
+    margin-top: 30px;
+}
+
+.left_image {
+    width: 37.15em;
+}
+
+.main_child_3_child > .left_image > img {
+    width: 37.1em;
+    height: 40em;
+    margin-bottom: 1.6em;
+}
+
+.right_image_1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2em;
+}
+.shortsleeves > img {
+    width: 14em;
+    height: auto;
+}
+
+.recctreck > img {
+    width: 14em;
+    height: auto;
+}
+
+.shortsleeves, .recctreck {
+    cursor: pointer;
+}
+
+.shortsleeves > figcaption > a {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.recctreck > figcaption > a {
+    font-size: 18px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+.shortsleeves > figcaption > a:hover {
+    color: #000000;
+}
+
+.recctreck > figcaption > a:hover {
+    color: #000000;
+}
+
+
+
+/* CHILD 4 OF MAIN OF THE PAGE */
+#ovSummerBtn {
+    width: 196px;
+    height: 48px;
+    color: white;
+    background-color: #202020;
+    border: none;
+    border-radius: 35px;
+    font-size: 16px;
+    font-weight: 500;
+    transition: 0.3s ease;
+    margin-bottom: 3em;
+}
+
+#ovSummerBtn:hover {
+    cursor: pointer;
+    background-color: #000F9F;
+}
+
+
+/* CHILD 5 OF MAIN OF THE PAGE */
+.main_child_5 {
+    width: 100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1.5em;
+    padding: 2.5em 1em 2.5em 0em;
+    background-color: #F8F8F8;
+}
+
+._image_link {
+    width: 43.45%;
+    height: 30em;
+    position: relative; 
+    overflow: hidden;
+}
+
+._image_link img {
+    width: 100%;
+    height: 100%;    
+    transition: transform 0.5s ease;
+}
+._image_link > h1 {
+    position: absolute;
+    top: 50%; 
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    color: #ffffff;
+    z-index: 1;
+    margin: 0;
+    padding: 0;
+}
+
+
+._image_link img:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+/* CHILD 6 OF MAIN OF THE PAGE */
+.main_child_6 {
+    font-size: 1.5em;
+}
+
+
+/* FOOTER OF THE PAGE */
+footer {
+    width: 100%;
+    height: 27em;
+    background-color: #ffffff;
+    padding: 2em 1em 2em 1em;
+    display: flex;
+    justify-content: space-between;
+    /* position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: -1; */    
+  transition: transform 0.4s ease;
+}
+
+.panel {
+    display: flex;
+    flex-direction: column;
+}
+
+/* PANEL 1 OF FOOTER OF THE PAGE */
+.panel_1 {
+    width: 35%;
+}
+
+.panel_1 h1 {
+    font-size: 3em;
+}
+
+.panel_1 p {
+    font-size: 0.8em;
+}
+
+#emailForm {
+    display: flex;
+    margin-top: 1.5em;
+}
+
+.panel_1 > form > label {
+    width: 4.4em;
+    height: 3em;
+    background-color: #E3E3E1;
+    display: grid;
+    place-content: center;
+    font-weight: 600;
+}
+
+#email {
+    width: 80%;
+    border: none;
+    background-color: #E3E3E1;
+    padding: 0 0.6em 0 0.6em;
+    font-size: 1.056em;
+    caret-color: #202020;
+}
+
+#email:focus {
+    outline: 0.2em solid #000F9F;
+    outline-offset: -0.2em;
+}
+
+.panel_1 h2 {
+    margin-top: 1em;
+}
+
+.gender {
+    margin: 0.5em 0 1em 0;
+}
+
+.gender > form {
+    width: 100%;
+}
+
+#gender {
+    width: 1.5em;
+    height: 1.5em;
+    margin-top: 0.9em;
+}
+
+.gender > form > label {
+    font-size: 1.15em;
+    font-weight: 500;
+}
+
+#signUpBtn {
+    float: right;
+    width: 8.7em;
+    height: 2.9em;
+    font-size: 1em;
+    font-weight: 500;
+    color: #ffffff;
+    background-color: #202020;
+    border: none;
+    border-radius: 1.9em;
+    transition: transform 0.5s ease;
+}
+
+#signUpBtn:hover {
+    background-color: #000F9F;
+    cursor: pointer;
+}
+
+
+/* PANEL 1 OF FOOTER OF THE PAGE */
+.panel_2 {
+    width: 65%;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#footerLinks {
+    margin-top: 1.5em;
+    display: block;
+}
+
+.fab {
+    font-size: 1.5em;
+    color: #202020;
+}
+
+.panel_2_iconsLinks {
+    /* width: 100%; */
+    display: flex;
+    gap: 3.5em;
+    margin-top: 4em;
+}
+
+.fab:hover {
+    color: #000F9F;
+    cursor: pointer;
+}
+
+.copyright {
+    margin-top: 1em;
+    font-size: 0.85em;
+    font-weight: 500;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media screen and (max-width: 580px) {
+    .child_1 {
+        display: none;
+    }
+    .child_3 {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .mobile_dropdown.show {
+    display: flex;
+    }
+
+    .cart {
+        display: block;
+    }
+
+    .women_dresses {
+        padding: 0;
+    }
+    #women_dresses {
+        width: 100%;
+    }
+    .intro {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0 5px 0 5px;
+    }
+    .intro > .heading > h1 {
+        font-size: 28px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+/* CHILD 2 OF MAIN OF THE PAGE */
+    .main_child_2 > h1 {
+        font-size: 1.375em;
+    }
+    .image_slider_main {
+        width: 105%;
+    }
+
+    .main_child_2 .image_slider_main .img1 img {
+        width: 8.75em;
+        height: 13.125em;
+    }
+
+    .next_btn, .prev_btn {
+       display: none;
+    }
+
+    /* CHILD 3 CHILD RIGHT SIDE IMAGE */
+
+    .main_child_3 .main_child_3_child .left_image img {
+        width: 100%;
+        height: auto;
+    }
+
+    .right_image {
+        width: auto;
+        padding: 0.5em;
+    }
+
+    .right_image .right_image_1 .shortsleeves img {
+        width: 100%;
+    }
+    .right_image .right_image_1 .recctreck img {
+        width: 100%;
+    }
+
+    /* CHILD 5 OF MAIN OF THE PAGE */
+    .main_child_5 {
+        flex-direction: column;
+    }
+
+    ._image_link {
+        width: 100%;
+    }
+
+
+    /* FOOTER OF THE PAGE */
+    footer {
+        display: block;
+    }
+    .panel {
+        width: 100%;
+    }
+}
+
+
+ 
+
+
+@media screen and (Max-width: 768px) {
+    .child_1 {
+        display: none;
+    }
+    .child_3 {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    .mobile_dropdown.show {
+    display: flex;
+    }
+
+    .cart {
+        display: block;
+    }
+
+    .women_dresses {
+        width: 97%;
+        padding: 0;
+        overflow: hidden;
+    }
+    #women_dresses {
+        width: 130%;
+    }
+    .intro {
+        display: block;
+        width: 100%;
+        text-align: center;
+        padding: 0 5px 0 5px;
+    }
+    .intro > .heading > h1 {
+        font-size: 28px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+/* CHILD 2 OF MAIN OF THE PAGE */
+    .main_child_2 > h1 {
+        font-size: 28px;
+    }
+    .main_child_2 {
+        width: 100%;
+        padding: 0 1em 0 1em;
+    }
+
+    .image_slider_main {
+        width: 100%;
+    }
+
+    .slider_images {
+        width: 100%;      
+    }
+
+    .img1 img {
+        width: 10.2em;
+        height: auto;
+    }
+
+    .main_child_3_child {
+        padding: 0.2em;
+    }
+
+    .prev_btn,.next_btn {
+        display: none;
+    }
+
+    /* CHILD 3 CHILD RIGHT SIDE IMAGE */
+
+    .left_image {
+        width: 100%;
+        padding: 0.5em;
+    }
+    .main_child_3_child > .left_image > img {
+        width: 100%;
+        height: 42.5em;
+    }
+
+    .right_image {
+        width: 100%;
+        margin-top: 20px;
+        padding-left: 0.5em;
+    }
+
+    .shortsleeves > img {
+        width: 100%;
+    }
+
+    .recctreck > img {
+        width: 100%;
+    }
+
+    .shortsleeves > figcaption > a {
+        font-size: 20px;
+    }
+    .recctreck > figcaption > a {
+        font-size: 20px;
+    }
+
+        /* CHILD 5 OF MAIN OF THE PAGE */
+    .main_child_5 {
+        flex-direction: column;
+    }
+
+    ._image_link {
+        width: 100%;
+        height: auto;
+    }
+
+    /* FOOTER OF THE PAGE */
+    footer {
+        display: block;
+    }
+    .panel {
+        width: 100%;
+    }
+}
+
+
+
+
+
