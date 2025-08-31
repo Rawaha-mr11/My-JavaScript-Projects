@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Word Scramble Game</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="main-container">
+        <h1 class="floating">Word Scramble Game</h1>
+
+        <div class="scramble-container">
+            <section class="score">
+                <p>Your Score: &nbsp; <span id="score-count">0</span> </p>
+                <div class="volume">
+                    <i class="fa fa-volume-up" id="volume-btn"></i>
+                    <i class="fa fa-question-circle" id="hint-btn"></i>
+                </div>
+            </section>
+
+            <section class="time">
+                <p class="timesplays">Number of Plays: <span id="timesplays">3</span></p>
+                <p class="time-taken">Time: <span id="time-taken">30s</span></p>
+            </section>
+            
+            <p class="hint-text" id="hint-text">Hint: Click the question mark for a hint</p>
+
+            <section class="scramble-words">
+                <div class="word-container" id="scrambled-letters">
+                </div>
+                <div class="empty-container" id="answer-slots">
+                </div>
+            </section>
+
+            <section class="resets">
+                <button id="refresh-word">Refresh</button>
+                <button id="next-word">Next</button>
+                <button id="resets-word">Reset</button>
+            </section>
+        </div>
+    </div>
+
+
+    <script src="./word.js"></script>    
+    <script src="./script.js"></script>
+</body>
+</html>
