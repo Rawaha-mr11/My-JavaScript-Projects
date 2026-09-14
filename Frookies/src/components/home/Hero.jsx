@@ -51,7 +51,7 @@ export default function Hero() {
               <img
                 src={cookieImg}
                 alt="Signature Frookie"
-                className="w-full h-full object-contain filter drop-shadow-2xl rotate-180 transform transition-transform duration-500 hover:scale-105"
+                className="w-full h-full object-contain filter drop-shadow-2xl rotate-120 transform transition-transform duration-500 hover:scale-105"
               />
             </div>
           </div>
